@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ترکر پیگیری همکاران | Outreach Tracker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;line-height:1.9}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 18px 60px}
+header.hero{text-align:center;padding:30px 16px 22px;background:linear-gradient(135deg,#123524,#1d5c38);border-radius:18px;margin-bottom:18px;border:1px solid #2c7a4b}
+header.hero h1{font-size:1.5rem;margin-bottom:6px}
+header.hero p{color:#bfe3cc;font-size:.92rem}
+.langbar{display:flex;gap:8px;justify-content:center;margin:14px 0 4px;flex-wrap:wrap}
+.langbar button,.backbtn{background:#0d1f16;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:7px 22px;cursor:pointer;font-size:.88rem;font-family:inherit;text-decoration:none;display:inline-block}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+.prog{background:#12291d;border:1px solid #2c7a4b;border-radius:12px;padding:12px 18px;margin-bottom:6px;font-size:.9rem;color:#bfe3cc}
+.prog .bar{height:10px;background:#0d1f16;border-radius:99px;margin-top:8px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:#22c55e;width:0;border-radius:99px}
+section.box{background:#12291d;border:1px solid #2c7a4b;border-radius:16px;padding:22px;margin-top:18px}
+section.box h2{color:#7cf2a8;font-size:1.2rem;margin-bottom:4px}
+section.box>p{color:#9fd8b4;font-size:.88rem;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:.83rem}
+th{background:#0d1f16;color:#7cf2a8;padding:8px 6px;border:1px solid #2c7a4b;font-size:.8rem}
+td{padding:7px 6px;border:1px solid #1d3a28;color:#d9efe1;vertical-align:top}
+tr:nth-child(even) td{background:#0f2318}
+td a{color:#7cf2a8}
+.ch{white-space:nowrap;font-size:.95rem}
+select,input[type=text]{background:#0d1f16;color:#e8f5ec;border:1px solid #2c7a4b;border-radius:8px;padding:7px 12px;font-family:inherit;font-size:.85rem}
+button.go{background:#22c55e;color:#06240f;border:none;border-radius:8px;padding:5px 14px;cursor:pointer;font-family:inherit;font-weight:bold;font-size:.8rem}
+button.copy{background:transparent;border:1px solid #2c7a4b;color:#7cf2a8;border-radius:8px;padding:4px 14px;cursor:pointer;font-family:inherit;font-size:.78rem}
+.sch{font-size:.75rem;color:#fcd34d;margin-top:4px}
+.sch label{display:block;color:#d9efe1}
+.pb{border:1px dashed #2c7a4b;border-radius:12px;padding:14px 16px;margin-top:12px;background:#0f2318}
+.pb h3{color:#7cf2a8;font-size:1rem;margin-bottom:6px}
+.msg{background:#0d1f16;border-radius:10px;padding:10px 14px;font-size:.85rem;color:#e8f5ec;margin:8px 0;white-space:pre-line}
+.pb ul{padding-right:20px;font-size:.83rem;color:#d9efe1}
+[dir=ltr] .pb ul{padding-right:0;padding-left:20px}
+.pb li{margin:3px 0}
+.task{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;margin:6px 0;color:#d9efe1}
+.task input{margin-top:7px;accent-color:#22c55e}
+.badge{display:inline-block;font-size:.75rem;border-radius:999px;padding:2px 12px;font-weight:bold}
+.open{background:#14532d;color:#86efac;border:1px solid #22c55e}
+.watch{background:#4a3a10;color:#fcd34d;border:1px solid #f59e0b}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;align-items:center}
+.note{background:#12291d;border:1px solid #f59e0b;border-radius:14px;padding:14px 18px;margin-top:20px;font-size:.85rem;color:#fde9c0}
+footer{text-align:center;margin-top:24px;color:#7ba78d;font-size:.82rem}
+@media print{.langbar,.toolbar,button.go,button.copy{display:none!important}body{background:#fff;color:#111}section.box,.pb,.prog,.note{background:#fff!important;color:#111!important;border-color:#999!important}section.box h2,.pb h3,th{color:#000!important}td{color:#111!important;border-color:#bbb!important}.msg{background:#f2f2f2!important;color:#000!important}.prog .bar{background:#ddd}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1 data-fa="📋 ترکر پیگیری همکاران و گرنت‌ها" data-en="📋 Outreach & Grants Tracker">📋 ترکر پیگیری همکاران و گرنت‌ها</h1>
+  <p data-fa="کانال ارتباطی هر همکار + پیام اختصاصی هر دسته + چک‌لیست تکنوپارک + فراخوان‌های TÜBİTAK + زمان‌بندی پیگیری خودکار" data-en="Each partner's channel + tailored message per category + technopark checklist + TÜBİTAK calls + auto follow-up schedule">کانال ارتباطی هر همکار + پیام اختصاصی هر دسته + چک‌لیست تکنوپارک + فراخوان‌های TÜBİTAK + زمان‌بندی پیگیری خودکار</p>
+  <div class="langbar">
+    <button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button>
+    <button id="btnEn" onclick="setLang('en')">English</button>
+    <a class="backbtn" href="partners.html" data-fa="→ همکاران" data-en="→ Partners">→ همکاران</a>
+    <a class="backbtn" href="green-demos-showcase.html" data-fa="→ کاتالوگ" data-en="→ Catalog">→ کاتالوگ</a>
+  </div>
+</header>
+
+<div class="prog"><span data-fa="پیشرفت کلی کارها" data-en="Overall progress">پیشرفت کلی کارها</span>: <b id="pcount">0 / 0</b><div class="bar"><i id="pbar"></i></div></div>
+
+<!-- 0. ISTANBUL -->
+<section class="box" id="istanbul">
+<h2 data-fa="۰. 🇹🇷 بخش استانبول: گشت پیدا کردن کار (نسخه بهتر)" data-en="0. 🇹🇷 Istanbul: work-hunting rounds (better version)">۰. 🇹🇷 بخش استانبول: گشت پیدا کردن کار (نسخه بهتر)</h2>
+<p data-fa="مخصوص این روزها که توی استانبول دنبال کاری: چک‌لیست روزانه جیب‌گردی + اهداف استانبول + پیام آماده ترکی با ترجمه + ثبت هدف‌های جدیدی که سر راه پیدا می‌کنی." data-en="For your Istanbul work-hunting days: daily pocket checklist + Istanbul targets + ready Turkish messages with translation + adding new targets you find on the way.">مخصوص این روزها که توی استانبول دنبال کاری: چک‌لیست روزانه جیب‌گردی + اهداف استانبول + پیام آماده ترکی با ترجمه + ثبت هدف‌های جدیدی که سر راه پیدا می‌کنی.</p>
+
+<div class="pb"><h3 data-fa="🎒 چک‌لیست روزانه قبل از بیرون رفتن" data-en="🎒 Daily checklist before heading out">🎒 چک‌لیست روزانه قبل از بیرون رفتن</h3>
+<label class="task"><input type="checkbox" id="w1" onchange="save()"><span data-fa="گوشی شارژ + لینک دموها آماده (امید سبز زنده است)" data-en="Phone charged + demo links ready (GreenHope is live)">گوشی شارژ + لینک دموها آماده (امید سبز زنده است)</span></label>
+<label class="task"><input type="checkbox" id="w2" onchange="save()"><span data-fa="پیچ‌دک PDF روی گوشی + لینک گوگل‌درایو برای ارسال سریع" data-en="Deck PDF on phone + Drive link for quick sending">پیچ‌دک PDF روی گوشی + لینک گوگل‌درایو برای ارسال سریع</span></label>
+<label class="task"><input type="checkbox" id="w3" onchange="save()"><span data-fa="پیام ترکی کپی‌شده و آماده ارسال + QR لینکدین" data-en="Turkish message copied & ready + LinkedIn QR">پیام ترکی کپی‌شده و آماده ارسال + QR لینکدین</span></label>
+<label class="task"><input type="checkbox" id="w4" onchange="save()"><span data-fa="۵ هدف امروز از جدول زیر انتخاب شده" data-en="Today's 5 targets picked from the table below">۵ هدف امروز از جدول زیر انتخاب شده</span></label>
+<label class="task"><input type="checkbox" id="w5" onchange="save()"><span data-fa="همان شب: ثبت نتیجه در ترکر + پیام تشکر/پیگیری" data-en="Same evening: log results in tracker + thank-you/follow-up message">همان شب: ثبت نتیجه در ترکر + پیام تشکر/پیگیری</span></label></div>
+
+<div class="pb"><h3 data-fa="📍 اهداف استانبول (تأییدشده)" data-en="📍 Istanbul targets (verified)">📍 اهداف استانبول (تأییدشده)</h3>
+<table><tr><th data-fa="هدف" data-en="Target">هدف</th><th data-fa="کانال" data-en="Channel">کانال</th><th>WA</th><th>Link</th><th data-fa="پیگیری" data-en="Follow-up">پیگیری</th></tr>
+<tr><td>İTÜ ARI Teknokent (Maslak) — پیش‌درخواست آنلاین + ایمیل</td><td class="ch">✉️📝📱</td><td>🔍</td><td><a href="https://www.ariteknokent.com.tr/tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'ARI')">▶</button><div class="sch"></div></td></tr>
+<tr><td>YTÜ Yıldız Teknopark — درخواست آنلاین + Kariyer (کاریابی)</td><td class="ch">📝✉️</td><td>🔍</td><td><a href="https://www.yildizteknopark.com.tr/" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'YTP')">▶</button><div class="sch"></div></td></tr>
+<tr><td>İTÜ — دفتر انتقال فناوری و دانشکده‌ها</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.itu.edu.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'ITU')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Yıldız Teknik (YTÜ) — دانشکده‌ها</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.yildiz.edu.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'YTU')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Boğaziçi — پژوهش اقلیم و محیط‌زیست</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.boun.edu.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'BOUN')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Sabancı — پژوهش و نوآوری</td><td>✉️📝</td><td>🔍</td><td><a href="https://www.sabanciuniv.edu" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'SAB')">▶</button><div class="sch"></div></td></tr>
+<tr><td>İBB — شهرداری استانبول (محیط‌زیست)</td><td class="ch">📝✉️</td><td>🔍</td><td><a href="https://www.ibb.istanbul" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'IBB')">▶</button><div class="sch"></div></td></tr>
+<tr><td>TEMA Foundation — NGO محیط‌زیست ترکیه</td><td class="ch">✉️📱</td><td>🔍</td><td><a href="https://www.tema.org.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TEMA')">▶</button><div class="sch"></div></td></tr>
+<tr><td>WWF-Türkiye — حیات‌وحش و اقلیم</td><td class="ch">✉️📱</td><td>🔍</td><td><a href="https://www.wwf.org.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'WWF')">▶</button><div class="sch"></div></td></tr>
+</table>
+<div style="margin-top:10px" class="toolbar">
+<input type="text" id="newname" data-fa-ph="هدف جدید سر راه... (مثلاً اسم شرکت/دفتر)" data-en-ph="New target on the way... (e.g. company/office name)">
+<select id="newch"><option>📱</option><option>✉️</option><option>📝</option><option>✈️</option><option>💼</option><option>🚶</option></select>
+<button class="go" onclick="addTarget()">+ <span data-fa="افزودن" data-en="Add">افزودن</span></button>
+</div>
+<table><tbody id="customRows"></tbody></table></div>
+
+<div class="pb"><h3 data-fa="🇹🇷 پیام‌های آماده ترکی (با ترجمه فارسی)" data-en="🇹🇷 Ready Turkish messages (with Persian gloss)">🇹🇷 پیام‌های آماده ترکی (با ترجمه فارسی)</h3>
+<p style="font-size:.8rem;color:#9fd8b4" data-fa="معنی: درخواست کار — «من سهیل سبزواری هستم؛ سکوهای پایش محیطی با ماهواره و هوش مصنوعی می‌سازم و در استانبول دنبال کار یا همکاری پروژه‌ای هستم. رزومه بفرستم؟ جلسه کوتاه ممکن است؟»" data-en="Meaning: job inquiry — introducing yourself, asking to share CV and meet briefly.">معنی: درخواست کار — «من سهیل سبزواری هستم؛ سکوهای پایش محیطی با ماهواره و هوش مصنوعی می‌سازم و در استانبول دنبال کار یا همکاری پروژه‌ای هستم. رزومه بفرستم؟ جلسه کوتاه ممکن است؟»</p>
+<div class="msg" id="tr1" dir="ltr" style="text-align:left">Merhaba, ben Soheil Sabzevari. Uydu verileri ve yapay zekâ ile çevre izleme platformları geliştiriyorum (GreenHope / ForestAI). İstanbul'da iş veya proje ortaklığı arıyorum. CV ve portföyümü paylaşabilir miyim? Kısa bir görüşme mümkün mü? Teşekkürler.</div>
+<button class="copy" onclick="copyMsg('tr1',this)">Copy Türkçe</button>
+<p style="font-size:.8rem;color:#9fd8b4;margin-top:10px" data-fa="معنی: همکاری/پایلوت — «برای فراخوان‌های TÜBİTAK و فرایند تکنوپارک در استانبول دنبال پایلوت و شریک هستیم. جلسه آشنایی ۱۵ دقیقه‌ای بگذاریم؟ پیچ‌دک: ...»" data-en="Meaning: partnership/pilot — seeking pilot & partners for TÜBİTAK calls and technopark; proposing a 15-min intro.">معنی: همکاری/پایلوت — «برای فراخوان‌های TÜBİTAK و فرایند تکنوپارک در استانبول دنبال پایلوت و شریک هستیم. جلسه آشنایی ۱۵ دقیقه‌ای بگذاریم؟ پیچ‌دک: ...»</p>
+<div class="msg" id="tr2" dir="ltr" style="text-align:left">Merhaba {ad}, ben Soheil Sabzevari (GreenHope). TÜBİTAK çağrıları ve teknopark süreçleri için İstanbul'da pilot ve iş ortağı arıyoruz. 15 dakikalık bir tanışma görüşmesi yapabilir miyiz? Sunum: {link}</div>
+<button class="copy" onclick="copyMsg('tr2',this)">Copy Türkçe</button>
+<p style="font-size:.8rem;color:#9fd8b4;margin-top:10px" data-fa="معنی: پیگیری — «می‌خواستم پیام چند روز پیش را یادآوری کنم. پیچ‌دک کوتاه اینجاست. ۱۵ دقیقه صحبت می‌کنیم؟»" data-en="Meaning: follow-up — nudging about the earlier message, sharing the short deck, asking for 15 minutes.">معنی: پیگیری — «می‌خواستم پیام چند روز پیش را یادآوری کنم. پیچ‌دک کوتاه اینجاست. ۱۵ دقیقه صحبت می‌کنیم؟»</p>
+<div class="msg" id="tr3" dir="ltr" style="text-align:left">Merhaba {ad}, geçen günkü mesajımı hatırlatmak istedim. Kısa sunumumuz burada: {link}. 15 dakika görüşebilir miyiz? Teşekkürler.</div>
+<button class="copy" onclick="copyMsg('tr3',this)">Copy Türkçe</button></div>
+
+<div class="pb"><h3 data-fa="🎤 پیچ ۳۰ ثانیه‌ای حضوری (از بر کن!)" data-en="🎤 30-second in-person pitch (memorize!)">🎤 پیچ ۳۰ ثانیه‌ای حضوری (از بر کن!)</h3>
+<p style="font-size:.8rem;color:#9fd8b4" data-fa="معنی: «سلام، من سهیلم؛ سکوهای پایش هوا و متان با ماهواره و هوش مصنوعی می‌سازم. در استانبول برای پروژه‌های تکنوپارک و TÜBİTAK دنبال تیم یا شریکم. می‌تونم دو دقیقه دمو را نشان بدهم؟»" data-en="Meaning: quick intro + ask for 2 minutes to show the demo.">معنی: «سلام، من سهیلم؛ سکوهای پایش هوا و متان با ماهواره و هوش مصنوعی می‌سازم. در استانبول برای پروژه‌های تکنوپارک و TÜBİTAK دنبال تیم یا شریکم. می‌تونم دو دقیقه دمو را نشان بدهم؟»</p>
+<div class="msg" id="tr4" dir="ltr" style="text-align:left">Merhaba, ben Soheil. Uydu verileri ve yapay zekâ ile hava kalitesi ve metan izleme platformları yapıyorum. İstanbul'da teknopark ve TÜBİTAK projeleri için ekip veya ortak arıyorum. Size iki dakikada demoyu gösterebilir miyim?</div>
+<button class="copy" onclick="copyMsg('tr4',this)">Copy Türkçe</button></div>
+
+<div class="pb"><h3 data-fa="📄 نکات رزومه برای استانبول" data-en="📄 CV tips for Istanbul">📄 نکات رزومه برای استانبول</h3>
+<ul>
+<li data-fa="رزومه یک‌صفحه‌ای انگلیسی + یک خلاصه نیم‌صفحه‌ای ترکی" data-en="1-page English CV + half-page Turkish summary">رزومه یک‌صفحه‌ای انگلیسی + یک خلاصه نیم‌صفحه‌ای ترکی</li>
+<li data-fa="بالای رزومه: لینک دموی زنده + لینکدین (کارفرما اول دمو را می‌بیند)" data-en="Top of CV: live demo link + LinkedIn (employers check the demo first)">بالای رزومه: لینک دموی زنده + لینکدین (کارفرما اول دمو را می‌بیند)</li>
+<li data-fa="عکس در رزومه ترکیه مرسوم است — یک عکس رسمی بگذار" data-en="Photos are customary on Turkish CVs — add a formal one">عکس در رزومه ترکیه مرسوم است — یک عکس رسمی بگذار</li>
+<li data-fa="مهارت‌ها: satellite data · AI/Claude · FastAPI/React · MRV · GIS" data-en="Skills: satellite data · AI/Claude · FastAPI/React · MRV · GIS">مهارت‌ها: satellite data · AI/Claude · FastAPI/React · MRV · GIS</li>
+<li data-fa="اسم فایل: Soheil_Sabzevari_CV.pdf (همیشه PDF، نه Word)" data-en="Filename: Soheil_Sabzevari_CV.pdf (always PDF, never Word)">اسم فایل: Soheil_Sabzevari_CV.pdf (همیشه PDF، نه Word)</li>
+</ul></div>
+</section>
+
+<!-- 6. LEADS BANK -->
+<section class="box" id="leads">
+<h2 data-fa="۶. 🌍 بانک لید: ترکیه گسترده + اروپا" data-en="6. 🌍 Leads bank: expanded Türkiye + Europe">۶. 🌍 بانک لید: ترکیه گسترده + اروپا</h2>
+<p data-fa="۱۰ لید جدید ترکیه (جمع ترکیه: ۱۹) + ۱۵ لید اروپا — تعداد اروپا به حد ترکیه رسید. همه با دکمه پیگیری ▶." data-en="10 new Türkiye leads (Türkiye total: 19) + 15 Europe leads — Europe now matches Türkiye. All with ▶ follow-up.">۱۰ لید جدید ترکیه (جمع ترکیه: ۱۹) + ۱۵ لید اروپا — تعداد اروپا به حد ترکیه رسید. همه با دکمه پیگیری ▶.</p>
+
+<div class="pb"><h3 data-fa="🇹🇷 ترکیه گسترده (۱۰ مورد جدید)" data-en="🇹🇷 Expanded Türkiye (10 new)">🇹🇷 ترکیه گسترده (۱۰ مورد جدید)</h3>
+<table><tr><th data-fa="لید" data-en="Lead">لید</th><th data-fa="کانال" data-en="Channel">کانال</th><th>WA</th><th>Link</th><th data-fa="پیگیری" data-en="Follow-up">پیگیری</th></tr>
+<tr><td>İTÜ Çekirdek — مرکز رشد، ثبت‌نام تمام‌سال</td><td class="ch">📝✉️</td><td>🔍</td><td><a href="https://www.itucekirdek.com" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'CEK')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Teknopark İstanbul Pendik — دفاع/انرژی/هوانوردی</td><td class="ch">✉️📝📱</td><td>🔍</td><td><a href="https://www.teknoparkistanbul.com.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TPI')">▶</button><div class="sch"></div></td></tr>
+<tr><td>KOSGEB — ثبت KOBİ + فراخوان‌ها</td><td class="ch">📝✉️</td><td>🔍</td><td><a href="https://www.kosgeb.gov.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'KOSG')">▶</button><div class="sch"></div></td></tr>
+<tr><td>İŞKUR — کاریابی رسمی ترکیه</td><td class="ch">📝</td><td>🔍</td><td><a href="https://www.iskur.gov.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'ISKUR')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Kariyer.net — پورتال استخدام</td><td class="ch">📝</td><td>🔍</td><td><a href="https://www.kariyer.net" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'KAR')">▶</button><div class="sch"></div></td></tr>
+<tr><td>TTGV — بنیاد توسعه فناوری ترکیه</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.ttgv.org.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TTGV')">▶</button><div class="sch"></div></td></tr>
+<tr><td>TÜBİTAK MAM Gebze — مرکز تحقیقات (نزدیک استانبول)</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://mam.tubitak.gov.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'MAM')">▶</button><div class="sch"></div></td></tr>
+<tr><td>ODTÜ Teknokent Ankara — تکنوپارک دانشگاه خاورمیانه</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.odtuteknokent.com.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'ODTU')">▶</button><div class="sch"></div></td></tr>
+<tr><td>TÜBİSAD — انجمن صنعت انفورماتیک</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.tubisad.org.tr" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TUBISAD')">▶</button><div class="sch"></div></td></tr>
+<tr><td>KWORKS Koç — مرکز رشد شیشلی (لینک را تأیید کن)</td><td class="ch">📝✉️</td><td>🔍</td><td>—</td><td><button class="go" onclick="startF(this,'KW')">▶</button><div class="sch"></div></td></tr>
+</table></div>
+
+<div class="pb"><h3 data-fa="🇪🇺 اروپا (۱۵ لید)" data-en="🇪🇺 Europe (15 leads)">🇪🇺 اروپا (۱۵ لید)</h3>
+<table><tr><th data-fa="لید" data-en="Lead">لید</th><th data-fa="کانال" data-en="Channel">کانال</th><th>WA</th><th>Link</th><th data-fa="پیگیری" data-en="Follow-up">پیگیری</th></tr>
+<tr><td>EIT Climate-KIC — نوآوری اقلیمی اروپا</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.climate-kic.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'CKIC')">▶</button><div class="sch"></div></td></tr>
+<tr><td>EIC — شورای نوآوری اروپا</td><td class="ch">📝✉️</td><td>🔍</td><td><a href="https://eic.ec.europa.eu" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'EIC')">▶</button><div class="sch"></div></td></tr>
+<tr><td>CAN Europe — شبکه اقلیمی</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.caneurope.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'CANE')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Transport & Environment — حمل‌ونقل پاک</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.transportenvironment.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TE')">▶</button><div class="sch"></div></td></tr>
+<tr><td>EEB — دفتر محیط‌زیست اروپا</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.eeb.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'EEB')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Bellona — محیط‌زیست (نروژ/اروپا)</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.bellona.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'BEL')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Germanwatch — اقلیم و توسعه</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.germanwatch.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'GW')">▶</button><div class="sch"></div></td></tr>
+<tr><td>TU Delft — فناوری و سنجش</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.tudelft.nl" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'TUD')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Imperial College — اقلیم و انرژی</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.imperial.ac.uk" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'IMP')">▶</button><div class="sch"></div></td></tr>
+<tr><td>KTH Stockholm — فناوری محیطی</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.kth.se" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'KTH')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Climeworks — حذف کربن (سوئیس)</td><td class="ch">✉️💼</td><td>🔍</td><td><a href="https://www.climeworks.com" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'CLW')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Carbfix — کربن معدنی (ایسلند)</td><td class="ch">✉️</td><td>🔍</td><td><a href="https://www.carbfix.com" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'CFX')">▶</button><div class="sch"></div></td></tr>
+<tr><td>Eurocities — شبکه شهرهای اروپا</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.eurocities.eu" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'EC')">▶</button><div class="sch"></div></td></tr>
+<tr><td>ICLEI — دولت‌های محلی پایدار</td><td class="ch">✉️📝</td><td>🔍</td><td><a href="https://www.iclei.org" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'ICLEI')">▶</button><div class="sch"></div></td></tr>
+<tr><td>EIT InnoEnergy — انرژی پایدار</td><td class="ch">✉️💼</td><td>🔍</td><td><a href="https://www.innoenergy.com" target="_blank">🔗</a></td><td><button class="go" onclick="startF(this,'INE')">▶</button><div class="sch"></div></td></tr>
+</table></div>
+</section>
+
+<!-- 1. CONTACT SHEET -->
+<section class="box" id="contacts">
+<h2 data-fa="۱. 📇 شیت تماس: کانال ارتباطی هر همکار" data-en="1. 📇 Contact sheet: each partner's channel">۱. 📇 شیت تماس: کانال ارتباطی هر همکار</h2>
+<p data-fa="📱 واتس‌اپ · ✉️ ایمیل · 📝 فرم تماس · ✈️ تلگرام · 💼 لینکدین — وضعیت: ✅ تأییدشده / 🔍 اول تأیید کن بعد پیام بده. دکمه ▶ زمان‌بندی پیگیری (روز ۰/۲/۷/۱۴) را می‌سازد." data-en="📱 WhatsApp · ✉️ Email · 📝 Contact form · ✈️ Telegram · 💼 LinkedIn — Status: ✅ verified / 🔍 verify first. ▶ builds the follow-up schedule (Day 0/2/7/14).">📱 واتس‌اپ · ✉️ ایمیل · 📝 فرم تماس · ✈️ تلگرام · 💼 لینکدین — وضعیت: ✅ تأییدشده / 🔍 اول تأیید کن بعد پیام بده. دکمه ▶ زمان‌بندی پیگیری (روز ۰/۲/۷/۱۴) را می‌سازد.</p>
+<div class="toolbar">
+  <select id="catfilter" onchange="filterCat(this.value)">
+    <option value="0" data-fa="همه دسته‌ها" data-en="All categories">همه دسته‌ها</option>
+    <option value="1">💰 Sponsors</option><option value="2">🏛️ Governments</option><option value="3">🌍 International</option><option value="4">🌱 NGOs</option><option value="5">🏦 Banks</option><option value="6">🎓 Universities</option><option value="7">🏢 Companies</option><option value="8">🛰️ Data</option><option value="9">⚖️ Legal</option><option value="10">📣 Media</option>
+  </select>
+  <input type="text" id="q" oninput="filterQ(this.value)" data-fa-ph="جست‌وجوی نام..." data-en-ph="Search name...">
+</div>
+<table id="ctable"><tr><th data-fa="همکار" data-en="Partner">همکار</th><th data-fa="دسته" data-en="Cat">دسته</th><th data-fa="کانال" data-en="Channel">کانال</th><th>WA</th><th data-fa="پیگیری" data-en="Follow-up">پیگیری</th></tr>
+<tr data-cat="1"><td>XPRIZE Foundation</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'XPRIZE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Global Methane Hub</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GMH')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Clean Air Fund</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'CAF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Bloomberg Philanthropies</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'Bloom')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Bezos Earth Fund</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'Bezos')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Breakthrough Energy</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'BTE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>ClimateWorks</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'CW')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>IKEA Foundation</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IKEA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>Rockefeller Foundation</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'Rock')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="1"><td>European Climate Found.</td><td>💰</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'ECF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>U.S. EPA</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'EPA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>EU Climate Action</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'EU')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>UKRI</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'UKRI')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>U.S. NSF</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'NSF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>USDA</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'USDA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>U.S. DOE</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'DOE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>USAID Central Asia</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'USAID')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>GIZ</td><td>🏛️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GIZ')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>Gov. Kyrgyzstan</td><td>🏛️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'KGgov')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="2"><td>Gov. Kazakhstan</td><td>🏛️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'KZgov')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>UNEP</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'UNEP')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>UNDP</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'UNDP')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>World Bank</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'WB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>ADB</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'ADB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>Green Climate Fund</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GCF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>GEF Small Grants</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GEF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>WHO</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'WHO')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>WMO</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'WMO')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>CCAC</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'CCAC')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="3"><td>UNECE</td><td>🌍</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'UNECE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>MoveGreen ✅</td><td>🌱</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'MG')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>Almaty Air Init. ✅</td><td>🌱</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'AAI')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>OpenAQ</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'OAQ')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>EDF (MethaneSAT)</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'EDF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>WRI</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'WRI')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>Global Forest Watch</td><td>🌱</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'GFW')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>RMI</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'RMI')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>C40 Cities</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'C40')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>Nature Conservancy</td><td>🌱</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'TNC')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="4"><td>CAN EECCA</td><td>🌱</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'CAN')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>EBRD</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'EBRD')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>EIB</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'EIB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>IFC</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IFC')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>KfW</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'KfW')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>IsDB</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IsDB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>AIIB</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'AIIB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>ADB Ventures</td><td>🏦</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'ADBV')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>Verra</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'Verra')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>Gold Standard</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GS')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="5"><td>FMO</td><td>🏦</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'FMO')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>AUCA</td><td>🎓</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'AUCA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>Nazarbayev Univ.</td><td>🎓</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'NU')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>KazNU</td><td>🎓</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'KazNU')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>KIMEP</td><td>🎓</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'KIMEP')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>Univ. Washington</td><td>🎓</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'UW')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>UC Berkeley</td><td>🎓</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'UCB')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>ETH Zurich</td><td>🎓</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'ETH')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>IIASA</td><td>🎓</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IIASA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>PIK Potsdam</td><td>🎓</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'PIK')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="6"><td>MIT</td><td>🎓</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'MIT')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>GHGSat</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'GHG')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>Kayrros</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'Kay')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>Planet</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'Plnt')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>IQAir</td><td>🏢</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IQ')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>Esri</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'Esri')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>Aerocam Vision*</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'Aero')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>GreenSense Labs*</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'GSL')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>FireLine Research*</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'FLR')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>EcoDrone SAS*</td><td>🏢</td><td class="ch">✉️💼</td><td>🔍</td><td><button class="go" onclick="startF(this,'Eco')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="7"><td>Pars Atashbin*</td><td>🏢</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'Pars')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>NASA Earthdata</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'NASA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>ESA</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'ESA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>Copernicus</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'Cop')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>Hugging Face</td><td>🛰️</td><td class="ch">📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'HF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>Earth Engine</td><td>🛰️</td><td class="ch">📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'GEE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>NOAA</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'NOAA')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>ECMWF</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'ECMWF')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>USGS</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'USGS')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>OpenStreetMap</td><td>🛰️</td><td class="ch">📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'OSM')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="8"><td>Open-Meteo</td><td>🛰️</td><td class="ch">📝✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'OM')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>ClientEarth</td><td>⚖️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'CE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>ELAW</td><td>⚖️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'ELAW')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>TrustLaw</td><td>⚖️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'TL')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>IUCN Law</td><td>⚖️</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'IUCN')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>IP lawyer TBD</td><td>⚖️</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'IP')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>Consortium counsel TBD</td><td>⚖️</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'CC')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>University TTO TBD</td><td>⚖️</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'TTO')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>Media compliance TBD</td><td>⚖️</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'MC')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>Template review TBD</td><td>⚖️</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'TR')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="9"><td>Arbitration TBD</td><td>⚖️</td><td class="ch">📱✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'Arb')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Kloop</td><td>📣</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'Kloop')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Azattyk</td><td>📣</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'Aza')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Vlast.kz</td><td>📣</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'Vla')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Mongabay</td><td>📣</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'Mon')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Climate Home News</td><td>📣</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'CHN')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>CleanTechnica</td><td>📣</td><td class="ch">✉️📝</td><td>🔍</td><td><button class="go" onclick="startF(this,'CT')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Dialogue Earth</td><td>📣</td><td class="ch">✉️</td><td>🔍</td><td><button class="go" onclick="startF(this,'DE')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>AAI YouTube</td><td>📣</td><td class="ch">✉️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'AAIY')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>CityAir Telegram ✅</td><td>📣</td><td class="ch">✈️</td><td>✅</td><td><button class="go" onclick="startF(this,'CBT')">▶</button><div class="sch"></div></td></tr>
+<tr data-cat="10"><td>Own channels TBD</td><td>📣</td><td class="ch">✈️📱</td><td>🔍</td><td><button class="go" onclick="startF(this,'Own')">▶</button><div class="sch"></div></td></tr>
+</table>
+<p style="font-size:.78rem;color:#7ba78d;margin-top:8px" data-fa="* شرکت نمونه دموی ForestAI — هویت واقعی جداگانه تأیید شود. 🔍 یعنی: در روز صفر اول کانال (واتس‌اپ؟) را پیدا و تأیید کن." data-en="* ForestAI demo sample companies — verify real identity separately. 🔍 means: on Day 0 first find & verify the channel (WhatsApp?)">* شرکت نمونه دموی ForestAI — هویت واقعی جداگانه تأیید شود. 🔍 یعنی: در روز صفر اول کانال (واتس‌اپ؟) را پیدا و تأیید کن.</p>
+</section>
+
+<!-- 2. PLAYBOOKS -->
+<section class="box" id="playbooks">
+<h2 data-fa="۲. 💬 پلی‌بوک پیام اختصاصی هر دسته" data-en="2. 💬 Tailored message playbook per category">۲. 💬 پلی‌بوک پیام اختصاصی هر دسته</h2>
+<p data-fa="پیام هر دسته بر اساس نوع کسب‌وکارش تنظیم شده + چک‌لیست آماده‌سازی (دستور کناری) — دکمه کپی برای ارسال در واتس‌اپ/تلگرام" data-en="Each category's message is tuned to its business type + prep checklist (side guide) — copy button for WhatsApp/Telegram">پیام هر دسته بر اساس نوع کسب‌وکارش تنظیم شده + چک‌لیست آماده‌سازی (دستور کناری) — دکمه کپی برای ارسال در واتس‌اپ/تلگرام</p>
+
+<div class="pb"><h3>💰 <span data-fa="اسپانسرها" data-en="Sponsors">اسپانسرها</span></h3>
+<div class="msg" id="m1" data-fa="سلام {نام} 🌿 من سهیل سبزواری (GreenHope/ForestAI) هستم. برای پایلوت پایش متان و سکوی هوشمند گرنت، بسته‌های اسپانسری برنز/نقره‌ای/طلایی داریم. پیچ‌دک: {لینک} — ۱۵ دقیقه صحبت کنیم؟" data-en="Hi {name} 🌿 I'm Soheil Sabzevari (GreenHope/ForestAI). For our methane pilot & grant-AI platform we offer bronze/silver/gold sponsor tiers. Deck: {link} — 15-min call?">سلام {نام} 🌿 من سهیل سبزواری (GreenHope/ForestAI) هستم. برای پایلوت پایش متان و سکوی هوشمند گرنت، بسته‌های اسپانسری برنز/نقره‌ای/طلایی داریم. پیچ‌دک: {لینک} — ۱۵ دقیقه صحبت کنیم؟</div>
+<button class="copy" onclick="copyMsg('m1',this)">Copy</button>
+<ul><li data-fa="آماده کن: یک‌صفحه بسته‌ها + بودجه پایلوت + لوگوی اسپانسر در دمو" data-en="Prepare: 1-page tiers + pilot budget + sponsor logo in demo">آماده کن: یک‌صفحه بسته‌ها + بودجه پایلوت + لوگوی اسپانسر در دمو</li></ul></div>
+
+<div class="pb"><h3>🏛️ <span data-fa="دولت‌ها" data-en="Governments">دولت‌ها</span></h3>
+<div class="msg" id="m2" data-fa="با سلام و احترام 🏛️ این‌جانب سهیل سبزواری (GreenHope) هستم. سکوی پایش متان و کیفیت هوا (ماهواره + حسگر) را برای پایلوت شهری و همکاری نهادی از جمله استقرار در تکنوپارک آماده کرده‌ایم. پیچ‌دک: {لینک} — امکان جلسه معرفی هست؟" data-en="Dear {name} 🏛️ I'm Soheil Sabzevari (GreenHope). Our satellite+sensor methane & air platform is ready for a city pilot and institutional hosting incl. technopark. Deck: {link} — intro meeting possible?">با سلام و احترام 🏛️ این‌جانب سهیل سبزواری (GreenHope) هستم. سکوی پایش متان و کیفیت هوا (ماهواره + حسگر) را برای پایلوت شهری و همکاری نهادی از جمله استقرار در تکنوپارک آماده کرده‌ایم. پیچ‌دک: {لینک} — امکان جلسه معرفی هست؟</div>
+<button class="copy" onclick="copyMsg('m2',this)">Copy</button>
+<ul><li data-fa="آماده کن: نامه رسمی + پیچ‌دک + پیشنهاد پایلوت شهری یک‌صفحه‌ای" data-en="Prepare: official letter + deck + 1-page city pilot offer">آماده کن: نامه رسمی + پیچ‌دک + پیشنهاد پایلوت شهری یک‌صفحه‌ای</li></ul></div>
+
+<div class="pb"><h3>🌍 <span data-fa="سازمان‌های بین‌المللی" data-en="International orgs">سازمان‌های بین‌المللی</span></h3>
+<div class="msg" id="m3" data-fa="Dear {name} 🌍 I'm Soheil Sabzevari (GreenHope). Our methane/air-intelligence platform aligns with your air-quality & methane programs (pilot-ready, MRV-oriented). Deck: {link} — could we explore a technical collaboration? (ترجمه فارسی در بانک پیام)" data-en="Dear {name} 🌍 I'm Soheil Sabzevari (GreenHope). Our methane/air-intelligence platform aligns with your air-quality & methane programs (pilot-ready, MRV-oriented). Deck: {link} — could we explore a technical collaboration?">Dear {name} 🌍 I'm Soheil Sabzevari (GreenHope). Our methane/air-intelligence platform aligns with your air-quality & methane programs (pilot-ready, MRV-oriented). Deck: {link} — could we explore a technical collaboration?</div>
+<button class="copy" onclick="copyMsg('m3',this)">Copy</button>
+<ul><li data-fa="آماده کن: نگاشت هم‌راستایی با برنامه آن‌ها + پیچ‌دک انگلیسی" data-en="Prepare: program-alignment map + English deck">آماده کن: نگاشت هم‌راستایی با برنامه آن‌ها + پیچ‌دک انگلیسی</li></ul></div>
+
+<div class="pb"><h3>🌱 <span data-fa="نهادهای مدنی" data-en="NGOs">نهادهای مدنی</span></h3>
+<div class="msg" id="m4" data-fa="سلام {نام} 🌱 من سهیل (GreenHope) هستم. برای اعتبارسنجی ماهواره با شبکه حسگری شما + پایش مشترک نقاط داغ + محتوای رسانه‌ای مشترک آماده‌ایم. پیچ‌دک: {لینک} — صحبت کنیم؟" data-en="Hi {name} 🌱 I'm Soheil (GreenHope). Ready for satellite validation with your sensor network + joint hotspot monitoring + shared media content. Deck: {link} — talk?">سلام {نام} 🌱 من سهیل (GreenHope) هستم. برای اعتبارسنجی ماهواره با شبکه حسگری شما + پایش مشترک نقاط داغ + محتوای رسانه‌ای مشترک آماده‌ایم. پیچ‌دک: {لینک} — صحبت کنیم؟</div>
+<button class="copy" onclick="copyMsg('m4',this)">Copy</button>
+<ul><li data-fa="آماده کن: نمونه نقشه نقطه داغ + پیشنهاد پایلوت مشترک + تقویم محتوا" data-en="Prepare: sample hotspot map + joint pilot offer + content calendar">آماده کن: نمونه نقشه نقطه داغ + پیشنهاد پایلوت مشترک + تقویم محتوا</li></ul></div>
+
+<div class="pb"><h3>🏦 <span data-fa="بانک‌ها و مالی سبز" data-en="Banks & green finance">بانک‌ها و مالی سبز</span></h3>
+<div class="msg" id="m5" data-fa="Dear {name} 🏦 I'm Soheil Sabzevari. GreenHope de-risks methane & air projects with satellite+sensor MRV — relevant for green lines and carbon-credit pipelines. Deck: {link} — intro call? (ترجمه فارسی در بانک پیام)" data-en="Dear {name} 🏦 I'm Soheil Sabzevari. GreenHope de-risks methane & air projects with satellite+sensor MRV — relevant for green lines and carbon-credit pipelines. Deck: {link} — intro call?">Dear {name} 🏦 I'm Soheil Sabzevari. GreenHope de-risks methane & air projects with satellite+sensor MRV — relevant for green lines and carbon-credit pipelines. Deck: {link} — intro call?</div>
+<button class="copy" onclick="copyMsg('m5',this)">Copy</button>
+<ul><li data-fa="آماده کن: مدل مالی پایلوت + مسیر درآمد کربنی + داده MRV نمونه" data-en="Prepare: pilot financial model + carbon revenue path + sample MRV data">آماده کن: مدل مالی پایلوت + مسیر درآمد کربنی + داده MRV نمونه</li></ul></div>
+
+<div class="pb"><h3>🎓 <span data-fa="دانشگاه‌ها" data-en="Universities">دانشگاه‌ها</span></h3>
+<div class="msg" id="m6" data-fa="سلام {نام} 🎓 من سهیل (GreenHope) هستم. برای همکاری پژوهشی + روش‌شناسی MRV + استقرار در تکنوپارک دانشگاه آماده‌ایم؛ مدارک لازم را هم آماده می‌کنیم. پیچ‌دک: {لینک} — جلسه با دفتر انتقال فناوری ممکن است؟" data-en="Hi {name} 🎓 I'm Soheil (GreenHope). Ready for joint research + MRV methods + university technopark hosting; we'll prep the required file. Deck: {link} — meeting with the TTO possible?">سلام {نام} 🎓 من سهیل (GreenHope) هستم. برای همکاری پژوهشی + روش‌شناسی MRV + استقرار در تکنوپارک دانشگاه آماده‌ایم؛ مدارک لازم را هم آماده می‌کنیم. پیچ‌دک: {لینک} — جلسه با دفتر انتقال فناوری ممکن است؟</div>
+<button class="copy" onclick="copyMsg('m6',this)">Copy</button>
+<ul><li data-fa="آماده کن (تکنوپارک): پروپوزال پروژه R&D + رزومه تیم + بودجه + مدارک شرکت + نامه دانشگاه" data-en="Prepare (technopark): R&D proposal + team CVs + budget + company docs + university letter">آماده کن (تکنوپارک): پروپوزال پروژه R&D + رزومه تیم + بودجه + مدارک شرکت + نامه دانشگاه</li>
+<li data-fa="آماده کن (پژوهش): چکیده مشترک + طرح MRV + تعریف پروژه دانشجویی" data-en="Prepare (research): joint abstract + MRV plan + student project definition">آماده کن (پژوهش): چکیده مشترک + طرح MRV + تعریف پروژه دانشجویی</li></ul></div>
+
+<div class="pb"><h3>🏢 <span data-fa="شرکت‌ها" data-en="Companies">شرکت‌ها</span></h3>
+<div class="msg" id="m7" data-fa="سلام {نام} 🏢 من سهیل (GreenHope/ForestAI) هستم. برای پایلوت مشترک / قرارداد داده / لیسانس ماژول آماده‌ایم؛ سورس و پرامپت برای شرکا موجود است. پیچ‌دک: {لینک} — مدل همکاری را بررسی کنیم؟" data-en="Hi {name} 🏢 I'm Soheil (GreenHope/ForestAI). Ready for joint pilot / data contract / module license; source & prompts available for partners. Deck: {link} — review a deal model?">سلام {نام} 🏢 من سهیل (GreenHope/ForestAI) هستم. برای پایلوت مشترک / قرارداد داده / لیسانس ماژول آماده‌ایم؛ سورس و پرامپت برای شرکا موجود است. پیچ‌دک: {لینک} — مدل همکاری را بررسی کنیم؟</div>
+<button class="copy" onclick="copyMsg('m7',this)">Copy</button>
+<ul><li data-fa="آماده کن: یک‌صفحه مدل همکاری (پایلوت/داده/لیسانس) + NDA ساده" data-en="Prepare: 1-page deal model (pilot/data/license) + simple NDA">آماده کن: یک‌صفحه مدل همکاری (پایلوت/داده/لیسانس) + NDA ساده</li></ul></div>
+
+<div class="pb"><h3>🛰️ <span data-fa="داده و زیرساخت" data-en="Data & infra">داده و زیرساخت</span></h3>
+<div class="msg" id="m8" data-fa="Hi {name} 🛰️ I'm Soheil — building GreenHope on open satellite & model infra (your platform included). We'd love API/access guidance + proper attribution. Details: {link} — who is the right contact? (ترجمه فارسی در بانک پیام)" data-en="Hi {name} 🛰️ I'm Soheil — building GreenHope on open satellite & model infra (your platform included). We'd love API/access guidance + proper attribution. Details: {link} — who is the right contact?">Hi {name} 🛰️ I'm Soheil — building GreenHope on open satellite & model infra (your platform included). We'd love API/access guidance + proper attribution. Details: {link} — who is the right contact?</div>
+<button class="copy" onclick="copyMsg('m8',this)">Copy</button>
+<ul><li data-fa="آماده کن: فهرست APIهای لازم + متن ارجاع/لوگو + کلید دسترسی" data-en="Prepare: needed-API list + attribution text/logo + access keys">آماده کن: فهرست APIهای لازم + متن ارجاع/لوگو + کلید دسترسی</li></ul></div>
+
+<div class="pb"><h3>⚖️ <span data-fa="حقوقی" data-en="Legal">حقوقی</span></h3>
+<div class="msg" id="m9" data-fa="با سلام ⚖️ این‌جانب سهیل سبزواری هستم. برای توافق‌نامه کنسرسیوم XPRIZE + مالکیت فکری + انطباق رسانه‌ای به مشاوره نیاز داریم (پروبانو یا قراردادی). پیچ‌دک غیرمحرمانه: {لینک} — مشاوره اولیه ممکن است؟" data-en="Dear {name} ⚖️ I'm Soheil Sabzevari. We need counsel for the XPRIZE consortium agreement + IP + media compliance (pro bono or contract). Non-confidential deck: {link} — initial consult possible?">با سلام ⚖️ این‌جانب سهیل سبزواری هستم. برای توافق‌نامه کنسرسیوم XPRIZE + مالکیت فکری + انطباق رسانه‌ای به مشاوره نیاز داریم (پروبانو یا قراردادی). پیچ‌دک غیرمحرمانه: {لینک} — مشاوره اولیه ممکن است؟</div>
+<button class="copy" onclick="copyMsg('m9',this)">Copy</button>
+<ul><li data-fa="آماده کن: شرح محدوده کار + سؤال‌های حقوقی + بودجه مشاوره" data-en="Prepare: scope of work + legal questions + counsel budget">آماده کن: شرح محدوده کار + سؤال‌های حقوقی + بودجه مشاوره</li></ul></div>
+
+<div class="pb"><h3>📣 <span data-fa="رسانه" data-en="Media">رسانه</span></h3>
+<div class="msg" id="m10" data-fa="سلام {نام} 📣 من سهیل (GreenHope) هستم؛ سوژه: «شکار متان نامرئی دفن‌گاه‌ها با ماهواره» + داده و مصاحبه آماده است. کیت خبری: {لینک} — برای گزارش/مصاحبه فرصت دارید؟" data-en="Hi {name} 📣 I'm Soheil (GreenHope); story: 'hunting invisible landfill methane from space' + data & interview ready. Press kit: {link} — open for a story/interview?">سلام {نام} 📣 من سهیل (GreenHope) هستم؛ سوژه: «شکار متان نامرئی دفن‌گاه‌ها با ماهواره» + داده و مصاحبه آماده است. کیت خبری: {لینک} — برای گزارش/مصاحبه فرصت دارید؟</div>
+<button class="copy" onclick="copyMsg('m10',this)">Copy</button>
+<ul><li data-fa="آماده کن: کیت خبری (عکس/نقشه/نقل‌قول) + صوت معرفی + اینفوگرافی" data-en="Prepare: press kit (photos/maps/quotes) + intro audio + infographic">آماده کن: کیت خبری (عکس/نقشه/نقل‌قول) + صوت معرفی + اینفوگرافی</li></ul></div>
+</section>
+
+<!-- 3. TIMELINE -->
+<section class="box" id="timeline">
+<h2 data-fa="۳. ⏰ موتور زمان‌بندی پیگیری (روز ۰/۲/۷/۱۴)" data-en="3. ⏰ Follow-up engine (Day 0/2/7/14)">۳. ⏰ موتور زمان‌بندی پیگیری (روز ۰/۲/۷/۱۴)</h2>
+<p data-fa="با دکمه ▶ هر همکار، تاریخ‌های دقیق ساخته می‌شود. هر مرحله را که انجام دادی تیک بزن تا پیشرفت ثبت شود:" data-en="The ▶ button on each partner builds exact dates. Tick each step as you complete it:">با دکمه ▶ هر همکار، تاریخ‌های دقیق ساخته می‌شود. هر مرحله را که انجام دادی تیک بزن تا پیشرفت ثبت شود:</p>
+<label class="task"><input type="checkbox" id="t0" onchange="save()"><span data-fa="روز صفر: تأیید کانال (واتس‌اپ؟) ← ارسال پیام اختصاصی دسته ← لینک پیچ‌دک" data-en="Day 0: verify channel (WhatsApp?) → send tailored message → deck link">روز صفر: تأیید کانال (واتس‌اپ؟) ← ارسال پیام اختصاصی دسته ← لینک پیچ‌دک</span></label>
+<label class="task"><input type="checkbox" id="t2" onchange="save()"><span data-fa="روز ۲: بررسی خوانده/پاسخ ← یادآوری کوتاه + یک مدرک جدید (لینک دمو/صوت)" data-en="Day 2: check read/reply → short nudge + one new proof (demo/audio link)">روز ۲: بررسی خوانده/پاسخ ← یادآوری کوتاه + یک مدرک جدید (لینک دمو/صوت)</span></label>
+<label class="task"><input type="checkbox" id="t7" onchange="save()"><span data-fa="روز ۷: پیگیری ارزش‌افزا (خلاصه/نتیجه مرتبط) + پیشنهاد تماس ۱۵ دقیقه‌ای" data-en="Day 7: value-add follow-up (relevant brief/result) + propose 15-min call">روز ۷: پیگیری ارزش‌افزا (خلاصه/نتیجه مرتبط) + پیشنهاد تماس ۱۵ دقیقه‌ای</span></label>
+<label class="task"><input type="checkbox" id="t14" onchange="save()"><span data-fa="روز ۱۴: یادآوری نهایی + درخواست معرفی به فرد درست (در صورت بی‌پاسخی، بایگانی)" data-en="Day 14: final nudge + ask for intro to the right person (archive if silent)">روز ۱۴: یادآوری نهایی + درخواست معرفی به فرد درست (در صورت بی‌پاسخی، بایگانی)</span></label>
+<label class="task"><input type="checkbox" id="tpos" onchange="save()"><span data-fa="در صورت پاسخ مثبت: ورود به مسیر مذاکره (مشاور ForestAI) + موازی: تکنوپارک و گرنت" data-en="If positive: enter negotiation track (ForestAI advisor) + parallel: technopark & grants">در صورت پاسخ مثبت: ورود به مسیر مذاکره (مشاور ForestAI) + موازی: تکنوپارک و گرنت</span></label>
+</section>
+
+<!-- 4. TECHNOPARK -->
+<section class="box" id="technopark">
+<h2 data-fa="۴. 🎓 مسیر ثبت تکنوپارک ترکیه (قانون ۴۶۹۱)" data-en="4. 🎓 Türkiye technopark track (Law 4691)">۴. 🎓 مسیر ثبت تکنوپارک ترکیه (قانون ۴۶۹۱)</h2>
+<p data-fa="دو لایه موازی: شرکت عادی (MERSİS + اداره ثبت) و پذیرش در منطقه (ارزیابی پروژه ۱ تا ۳ ماهه). تیک بزن و جلو برو:" data-en="Two parallel layers: ordinary company (MERSİS + Trade Registry) and zone admission (1–3 month project review). Tick and go:">دو لایه موازی: شرکت عادی (MERSİS + اداره ثبت) و پذیرش در منطقه (ارزیابی پروژه ۱ تا ۳ ماهه). تیک بزن و جلو برو:</p>
+<label class="task"><input type="checkbox" id="k1" onchange="save()"><span data-fa="پرونده پروژه: شرح فعالیت + دامنه فنی R&D/نرم‌افزار + طرح تجاری (۱ تا ۲ هفته)" data-en="Project file: activity description + R&D/software scope + commercial plan (1–2 wks)">پرونده پروژه: شرح فعالیت + دامنه فنی R&D/نرم‌افزار + طرح تجاری (۱ تا ۲ هفته)</span></label>
+<label class="task"><input type="checkbox" id="k2" onchange="save()"><span data-fa="مدارک: پاسپورت/شناسنامه + آپوستیل و ترجمه رسمی (۳ تا ۱۰ روز کاری)" data-en="Documents: passport/ID + apostille & sworn translation (3–10 business days)">مدارک: پاسپورت/شناسنامه + آپوستیل و ترجمه رسمی (۳ تا ۱۰ روز کاری)</span></label>
+<label class="task"><input type="checkbox" id="k3" onchange="save()"><span data-fa="شماره مالیاتی + ثبت MERSİS + اداره ثبت تجارت (۱ تا ۵ روز)" data-en="Tax number + MERSİS filing + Trade Registry (1–5 days)">شماره مالیاتی + ثبت MERSİS + اداره ثبت تجارت (۱ تا ۵ روز)</span></label>
+<label class="task"><input type="checkbox" id="k4" onchange="save()"><span data-fa="اداره مالیات + حساب بانکی شرکتی (۱ تا ۳ هفته)" data-en="Tax office setup + corporate bank account (1–3 weeks)">اداره مالیات + حساب بانکی شرکتی (۱ تا ۳ هفته)</span></label>
+<label class="task"><input type="checkbox" id="k5" onchange="save()"><span data-fa="ثبت درخواست در شرکت مدیر منطقه + ارزیابی کمیسیون (۱ تا ۳ ماه)" data-en="Apply to zone management company + commission review (1–3 months)">ثبت درخواست در شرکت مدیر منطقه + ارزیابی کمیسیون (۱ تا ۳ ماه)</span></label>
+<label class="task"><input type="checkbox" id="k6" onchange="save()"><span data-fa="امضای اجاره + شروع فعالیت در منطقه (معافیت‌ها از این نقطه)" data-en="Sign lease + start in-zone activity (exemptions apply from here)">امضای اجاره + شروع فعالیت در منطقه (معافیت‌ها از این نقطه)</span></label>
+</section>
+
+<!-- 5. GRANTS -->
+<section class="box" id="grants">
+<h2 data-fa="۵. 💰 گرنت‌ها و فاندها (TÜBİTAK و همراهان)" data-en="5. 💰 Grants & funds (TÜBİTAK & co)">۵. 💰 گرنت‌ها و فاندها (TÜBİTAK و همراهان)</h2>
+<p data-fa="دو فراخوان الان باز است 🟢 — برای هر کدام: پیش‌ثبت ← مدارک ← ارسال در PRODİS ← پیگیری. مبلغ‌ها سقف فراخوان‌اند و هر دوره ممکن است تغییر کنند." data-en="Two calls are open now 🟢 — for each: pre-register → documents → submit in PRODİS → track. Amounts are call ceilings and may change per period.">دو فراخوان الان باز است 🟢 — برای هر کدام: پیش‌ثبت ← مدارک ← ارسال در PRODİS ← پیگیری. مبلغ‌ها سقف فراخوان‌اند و هر دوره ممکن است تغییر کنند.</p>
+
+<div class="pb"><h3>BİGG+ Seed 2026/1 <span class="badge open" data-fa="🟢 باز تا ۲۰ نوامبر ۲۰۲۶" data-en="🟢 Open till 20 Nov 2026">🟢 باز تا ۲۰ نوامبر ۲۰۲۶</span> <span id="cd1" class="badge watch"></span></h3>
+<div class="msg" data-fa="سقف: ۸ میلیون لیر · شرط: اتمام 1512 یا پیش‌بذر 1812 · مدارک پیش‌ثبت تا ۱۷ نوامبر · ارسال در TEYDEB PRODİS" data-en="Ceiling: 8M TL · requires completed 1512 or 1812 pre-seed · pre-reg docs by 17 Nov · via TEYDEB PRODİS">سقف: ۸ میلیون لیر · شرط: اتمام 1512 یا پیش‌بذر 1812 · مدارک پیش‌ثبت تا ۱۷ نوامبر · ارسال در TEYDEB PRODİS</div>
+<label class="task"><input type="checkbox" id="g1a" onchange="save()"><span data-fa="پیش‌ثبت سازمانی در PRODİS + ارسال مدارک تا ۱۷ نوامبر" data-en="Org pre-registration in PRODİS + docs by 17 Nov">پیش‌ثبت سازمانی در PRODİS + ارسال مدارک تا ۱۷ نوامبر</span></label>
+<label class="task"><input type="checkbox" id="g1b" onchange="save()"><span data-fa="تکمیل و ارسال درخواست تا ۲۰ نوامبر + پیگیری" data-en="Complete & submit by 20 Nov + track">تکمیل و ارسال درخواست تا ۲۰ نوامبر + پیگیری</span></label></div>
+
+<div class="pb"><h3>1707 Order-based R&D 2026-3 <span class="badge open" data-fa="🟢 باز تا ۱۳ نوامبر ۲۰۲۶" data-en="🟢 Open till 13 Nov 2026">🟢 باز تا ۱۳ نوامبر ۲۰۲۶</span> <span id="cd2" class="badge watch"></span></h3>
+<div class="msg" data-fa="تحقیق سفارش‌محور SME (سه دوره در ۲۰۲۶) · ارسال در PRODİS تا ۱۳ نوامبر" data-en="Order-based SME R&D (3 periods in 2026) · via PRODİS till 13 Nov">تحقیق سفارش‌محور SME (سه دوره در ۲۰۲۶) · ارسال در PRODİS تا ۱۳ نوامبر</div>
+<label class="task"><input type="checkbox" id="g2a" onchange="save()"><span data-fa="یافتن مشتری سفارش‌دهنده (شرکت متقاضی) + توافق‌نامه" data-en="Find ordering customer + agreement">یافتن مشتری سفارش‌دهنده (شرکت متقاضی) + توافق‌نامه</span></label>
+<label class="task"><input type="checkbox" id="g2b" onchange="save()"><span data-fa="ارسال در PRODİS تا ۱۳ نوامبر + پیگیری" data-en="Submit in PRODİS by 13 Nov + track">ارسال در PRODİS تا ۱۳ نوامبر + پیگیری</span></label></div>
+
+<div class="pb"><h3>1512 BiGG <span class="badge watch" data-fa="🟡 رصد فراخوان" data-en="🟡 Watch calls">🟡 رصد فراخوان</span></h3>
+<div class="msg" data-fa="حمایت کارآفرینی فناورانه (سرمایه بذری) · پیش‌نیاز BİGG+ · فراخوان‌ها دوره‌ای" data-en="Tech entrepreneurship seed support · prerequisite for BİGG+ · periodic calls">حمایت کارآفرینی فناورانه (سرمایه بذری) · پیش‌نیاز BİGG+ · فراخوان‌ها دوره‌ای</div>
+<label class="task"><input type="checkbox" id="g3a" onchange="save()"><span data-fa="رصد فراخوان بعدی + آماده‌سازی ایده و تیم" data-en="Watch next call + prep idea & team">رصد فراخوان بعدی + آماده‌سازی ایده و تیم</span></label></div>
+
+<div class="pb"><h3>1501 / 1507 <span class="badge watch" data-fa="🟡 رصد فراخوان" data-en="🟡 Watch calls">🟡 رصد فراخوان</span></h3>
+<div class="msg" data-fa="1501: تحقیق صنعتی (شرکت‌های بزرگ‌تر) · 1507: استارت تحقیق SME · هر دو از مسیر TEYDEB" data-en="1501: industrial R&D (larger firms) · 1507: SME R&D starter · both via TEYDEB">1501: تحقیق صنعتی (شرکت‌های بزرگ‌تر) · 1507: استارت تحقیق SME · هر دو از مسیر TEYDEB</div>
+<label class="task"><input type="checkbox" id="g4a" onchange="save()"><span data-fa="انتخاب کد مناسب (1501 یا 1507) + رصد فراخوان" data-en="Pick the right code (1501 or 1507) + watch calls">انتخاب کد مناسب (1501 یا 1507) + رصد فراخوان</span></label></div>
+
+<div class="pb"><h3>3001 ARDEB <span class="badge watch" data-fa="🟡 بدون ددلاین" data-en="🟡 No deadline">🟡 بدون ددلاین</span></h3>
+<div class="msg" data-fa="شروع پروژه R&D برای دانشگاه/دولت/شرکت R&D · حداکثر ۲۴ ماهه · ارسال در ARDEB-PBS" data-en="Starting R&D for university/gov/R&D firms · max 24 months · via ARDEB-PBS">شروع پروژه R&D برای دانشگاه/دولت/شرکت R&D · حداکثر ۲۴ ماهه · ارسال در ARDEB-PBS</div>
+<label class="task"><input type="checkbox" id="g5a" onchange="save()"><span data-fa="یافتن PI دانشگاهی واجد شرایط + ثبت در ARDEB-PBS" data-en="Find eligible academic PI + file in ARDEB-PBS">یافتن PI دانشگاهی واجد شرایط + ثبت در ARDEB-PBS</span></label></div>
+
+<div class="pb"><h3>KOSGEB <span class="badge watch" data-fa="🟡 رصد فراخوان" data-en="🟡 Watch calls">🟡 رصد فراخوان</span></h3>
+<div class="msg" data-fa="رشد و دیجیتالی SMEs: KOBİGEL و KOBİ TEKNOYATIRIM · مکمل TÜBİTAK برای هزینه‌های غیرتحقیق" data-en="SME growth & digitalization: KOBİGEL & KOBİ TEKNOYATIRIM · complements TÜBİTAK for non-R&D costs">رشد و دیجیتالی SMEs: KOBİGEL و KOBİ TEKNOYATIRIM · مکمل TÜBİTAK برای هزینه‌های غیرتحقیق</div>
+<label class="task"><input type="checkbox" id="g6a" onchange="save()"><span data-fa="ثبت شرکت در KOSGEB + رصد فراخوان فعال" data-en="Register company in KOSGEB + watch active calls">ثبت شرکت در KOSGEB + رصد فراخوان فعال</span></label></div>
+</section>
+
+<div class="note" data-fa="💡 روش کار: ۱) در شیت تماس، کانال هر همکار را تأیید کن ۲) پیام اختصاصی دسته‌اش را کپی و بفرست ۳) ▶ را بزن تا تاریخ‌های پیگیری ساخته شود ۴) موازی: تکنوپارک + گرنت‌های باز را جلو ببر. تیک‌ها در همین مرورگر ذخیره می‌شود." data-en="💡 Workflow: 1) verify each partner's channel in the contact sheet 2) copy & send its category message 3) hit ▶ to build follow-up dates 4) in parallel: advance technopark + open grants. Ticks are saved in this browser.">💡 روش کار: ۱) در شیت تماس، کانال هر همکار را تأیید کن ۲) پیام اختصاصی دسته‌اش را کپی و بفرست ۳) ▶ را بزن تا تاریخ‌های پیگیری ساخته شود ۴) موازی: تکنوپارک + گرنت‌های باز را جلو ببر. تیک‌ها در همین مرورگر ذخیره می‌شود.</div>
+<footer data-fa="اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir" data-en="Oct 2026 · GreenHope & ForestAI & CityAir">اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir</footer>
+</div>
+<script>
+var store={ticks:{},follows:{}};
+try{var s=localStorage.getItem('tracker1');if(s)store=JSON.parse(s);}catch(e){}
+function save(){try{localStorage.setItem('tracker1',JSON.stringify(store));}catch(e){}progress();}
+function dstr(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function startF(btn,name){
+  var t=new Date();
+  store.follows[name]={d0:dstr(t),done:{}};
+  var box=btn.parentElement.querySelector('.sch');
+  renderF(name,box);save();
+}
+function renderF(name,box){
+  var f=store.follows[name];if(!f)return;
+  var d0=new Date(f.d0+'T12:00:00');
+  var days=[0,2,7,14];
+  var h='';
+  for(var i=0;i<days.length;i++){
+    var d=new Date(d0);d.setDate(d.getDate()+days[i]);
+    var ck=f.done['d'+days[i]]?'checked':'';
+    h+='<label><input type="checkbox" '+ck+' onchange="tickF(\''+name+'\',\'d'+days[i]+'\',this.checked)"> Day '+days[i]+': '+dstr(d)+'</label>';
+  }
+  box.innerHTML=h;
+}
+function tickF(name,k,v){store.follows[name].done[k]=v;save();}
+document.querySelectorAll('button.go').forEach(function(b){
+  var m=b.getAttribute('onclick').match(/'([^']+)'/);
+  if(m&&store.follows[m[1]])renderF(m[1],b.parentElement.querySelector('.sch'));
+});
+document.querySelectorAll('input[type=checkbox][id]').forEach(function(c){
+  if(store.ticks[c.id])c.checked=true;
+  c.addEventListener('change',function(){store.ticks[c.id]=c.checked;save();});
+});
+function progress(){
+  var all=document.querySelectorAll('input[type=checkbox]').length;
+  var on=document.querySelectorAll('input[type=checkbox]:checked').length;
+  document.getElementById('pcount').textContent=on+' / '+all;
+  document.getElementById('pbar').style.width=(all?Math.round(on/all*100):0)+'%';
+}
+function filterCat(v){
+  document.querySelectorAll('#ctable tr[data-cat]').forEach(function(r){
+    r.style.display=(v==='0'||r.getAttribute('data-cat')===v)?'':'none';
+  });
+}
+function filterQ(q){
+  q=q.toLowerCase();
+  document.querySelectorAll('#ctable tr[data-cat]').forEach(function(r){
+    r.style.display=(r.cells[0].textContent.toLowerCase().indexOf(q)>=0)?'':'none';
+  });
+}
+function copyMsg(id,btn){
+  var t=document.getElementById(id).textContent;
+  function ok(){btn.textContent='✓';setTimeout(function(){btn.textContent='Copy';},1500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(function(){fallback();});}
+  else fallback();
+  function fallback(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();}
+}
+function countdown(id,dl){
+  var el=document.getElementById(id);if(!el)return;
+  var t=new Date();t.setHours(0,0,0,0);
+  var d=new Date(dl+'T12:00:00');
+  var n=Math.round((d-t)/864e5);
+  var fa=document.documentElement.lang!=='en';
+  el.textContent=n<0?(fa?'⛔ بسته شد':'⛔ Closed'):(fa?'⏳ '+n+' روز مانده':'⏳ '+n+' days left');
+  if(n<0)el.className='badge';
+}
+function setLang(l){
+  document.querySelectorAll('[data-fa]').forEach(function(el){
+    var v=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');
+    if(v!==null)el.textContent=v;
+  });
+  document.querySelectorAll('[data-fa-ph]').forEach(function(inp){
+    inp.placeholder=(l==='fa')?inp.getAttribute('data-fa-ph'):inp.getAttribute('data-en-ph');
+  });
+  document.documentElement.lang=l;
+  document.documentElement.dir=(l==='fa')?'rtl':'ltr';
+  document.getElementById('btnFa').classList.toggle('active',l==='fa');
+  document.getElementById('btnEn').classList.toggle('active',l==='en');
+  countdown('cd1','2026-11-20');countdown('cd2','2026-11-13');
+}
+store.custom=store.custom||[];
+function renderCustom(){
+  var tb=document.getElementById('customRows');tb.innerHTML='';
+  store.custom.forEach(function(c,i){
+    var tr=document.createElement('tr');
+    var td1=document.createElement('td');td1.textContent=c.n;
+    var td2=document.createElement('td');td2.className='ch';td2.textContent=c.ch;
+    var td3=document.createElement('td');td3.textContent='🔍';
+    var td4=document.createElement('td');
+    var b=document.createElement('button');b.className='go';b.textContent='▶';
+    b.setAttribute('onclick',"startF(this,'custom"+i+"')");
+    var d=document.createElement('div');d.className='sch';
+    td4.appendChild(b);td4.appendChild(d);
+    tr.appendChild(td1);tr.appendChild(td2);tr.appendChild(td3);tr.appendChild(td4);
+    tb.appendChild(tr);
+    if(store.follows['custom'+i])renderF('custom'+i,d);
+  });
+}
+function addTarget(){
+  var n=document.getElementById('newname').value.trim();if(!n)return;
+  var ch=document.getElementById('newch').value;
+  store.custom.push({n:n,ch:ch});
+  document.getElementById('newname').value='';
+  renderCustom();save();
+}
+renderCustom();
+setLang('fa');progress();
+</script>
+</body>
+</html>

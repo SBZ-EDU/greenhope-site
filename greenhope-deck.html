@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenHope — پیچ‌دک | Pitch Deck</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.top{width:100%;max-width:960px;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+.top .brand{color:#7cf2a8;font-weight:bold}
+.langbar button{background:transparent;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:6px 20px;cursor:pointer;font-family:inherit;margin:0 4px}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+.deck{width:100%;max-width:960px;flex:1;display:flex;padding:6px 20px 10px}
+.slide{display:none;width:100%;background:#12291d;border:1px solid #2c7a4b;border-radius:18px;padding:44px 40px;min-height:52vh}
+.slide.active{display:block}
+.slide h1{font-size:2.6rem;color:#7cf2a8;margin-bottom:10px}
+.slide h2{font-size:1.7rem;color:#7cf2a8;margin-bottom:18px}
+.slide p.sub{font-size:1.15rem;color:#d9efe1;margin-bottom:6px}
+.slide ul{list-style:none;margin-top:6px}
+.slide li{font-size:1.12rem;padding:9px 0 9px 8px;border-bottom:1px solid #1d3a28;color:#e8f5ec}
+.slide li::before{content:"◾ ";color:#22c55e;font-size:.85rem}
+.slide .quote{margin-top:22px;font-size:1.2rem;color:#7cf2a8;font-style:italic}
+.nav{display:flex;gap:12px;align-items:center;padding:14px}
+.nav button{background:#22c55e;color:#06240f;border:none;border-radius:10px;padding:10px 26px;font-size:1rem;cursor:pointer;font-family:inherit;font-weight:bold}
+.nav button:hover{background:#4ade80}
+#counter{color:#7ba78d;min-width:70px;text-align:center}
+.footer{color:#7ba78d;font-size:.8rem;padding-bottom:18px;text-align:center;direction:ltr}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand">🌿 GreenHope — Pitch Deck</div>
+  <div class="langbar"><button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button><button id="btnEn" onclick="setLang('en')">English</button></div>
+</div>
+<div class="deck">
+  <section class="slide active">
+    <h1>GreenHope</h1>
+    <p class="sub" data-fa="هوش محیط‌زیستی برای کاهش متان" data-en="Environmental Intelligence for Methane Mitigation">هوش محیط‌زیستی برای کاهش متان</p>
+    <p class="sub" data-fa="مسابقه XPRIZE Mission Methane · فاز توسعه مشارکت" data-en="XPRIZE Mission Methane · Partner-Development Phase">مسابقه XPRIZE Mission Methane · فاز توسعه مشارکت</p>
+    <p class="quote" data-fa="سهیل سبزواری · ابتکار GreenHope" data-en="Soheil Sabzevari · GreenHope Initiative">سهیل سبزواری · ابتکار GreenHope</p>
+  </section>
+  <section class="slide">
+    <h2 data-fa="مشکل: متان نامرئی" data-en="The Problem: Invisible Methane">مشکل: متان نامرئی</h2>
+    <ul>
+      <li data-fa="متان در کوتاه‌مدت بیش از ۸۰ برابر CO2 زمین را گرم می‌کند" data-en="Methane warms 80x+ more than CO2 in the short term">متان در کوتاه‌مدت بیش از ۸۰ برابر CO2 زمین را گرم می‌کند</li>
+      <li data-fa="محل‌های دفن زباله، پسماند و فاضلاب: منابع بزرگ متان پخش" data-en="Landfills, waste systems & wastewater: major diffuse sources">محل‌های دفن زباله، پسماند و فاضلاب: منابع بزرگ متان پخش</li>
+      <li data-fa="منابع رقیق یک نقطه کور اقلیمی‌اند — فناوری مقیاس‌پذیر وجود ندارد" data-en="Dilute sources are a climate blind spot — no scalable tech exists">منابع رقیق یک نقطه کور اقلیمی‌اند — فناوری مقیاس‌پذیر وجود ندارد</li>
+      <li data-fa="آسیای مرکزی فاقد پایش زمینی و داده باز است" data-en="Central Asia lacks ground monitoring + open data">آسیای مرکزی فاقد پایش زمینی و داده باز است</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="راهکار: سکوی GreenHope" data-en="The Solution: GreenHope Platform">راهکار: سکوی GreenHope</h2>
+    <ul>
+      <li data-fa="دیدبانی ماهواره‌ای زمین (Sentinel-2 و FIRMS ناسا)" data-en="Satellite Earth observation (Sentinel-2, NASA FIRMS)">دیدبانی ماهواره‌ای زمین (Sentinel-2 و FIRMS ناسا)</li>
+      <li data-fa="آشکارسازی ناهنجاری حرارتی برای نقاط داغ سوزاندن پسماند و دفن‌گاه‌ها" data-en="Thermal-anomaly detection for waste-burning & landfill hotspots">آشکارسازی ناهنجاری حرارتی برای نقاط داغ سوزاندن پسماند و دفن‌گاه‌ها</li>
+      <li data-fa="حسگرهای زمینی متان و کیفیت هوا برای اعتبارسنجی میدانی" data-en="Field methane + air-quality sensors validate from the ground">حسگرهای زمینی متان و کیفیت هوا برای اعتبارسنجی میدانی</li>
+      <li data-fa="یک لایه هوش یکپارچه: فضا ← زمین ← اقدام" data-en="One intelligence layer: space → ground → action">یک لایه هوش یکپارچه: فضا ← زمین ← اقدام</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="چطور کار می‌کند؟" data-en="How It Works">چطور کار می‌کند؟</h2>
+    <ul>
+      <li data-fa="۱. ماهواره‌ها و هشدارهای حرارتی، نقاط پرخطر را علامت می‌زنند" data-en="1. Satellites & thermal alerts flag risk hotspots">۱. ماهواره‌ها و هشدارهای حرارتی، نقاط پرخطر را علامت می‌زنند</li>
+      <li data-fa="۲. حسگرهای زمینی، متان و PM2.5 را اعتبارسنجی می‌کنند" data-en="2. Ground sensors validate methane, PM2.5 & air impacts">۲. حسگرهای زمینی، متان و PM2.5 را اعتبارسنجی می‌کنند</li>
+      <li data-fa="۳. خطوط مبنا + داده آماده MRV، مسیر کاهش را نشان می‌دهد" data-en="3. Baselines + MRV-ready data guide mitigation">۳. خطوط مبنا + داده آماده MRV، مسیر کاهش را نشان می‌دهد</li>
+      <li data-fa="۴. داشبورد عمومی + رسانه، موضوع را برای شهروندان روشن می‌کند" data-en="4. Public dashboards + media explain it to citizens">۴. داشبورد عمومی + رسانه، موضوع را برای شهروندان روشن می‌کند</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="چرا XPRIZE Mission Methane؟" data-en="Why XPRIZE Mission Methane?">چرا XPRIZE Mission Methane؟</h2>
+    <ul>
+      <li data-fa="دقیقاً روی متان رقیق و پخش تمرکز دارد — همان تمرکز ما" data-en="Targets dilute & diffuse methane — exactly our focus">دقیقاً روی متان رقیق و پخش تمرکز دارد — همان تمرکز ما</li>
+      <li data-fa="بر ایده «پسماند به حذف بادوام کربن» ما (Design Studio) بنا شده" data-en="Builds on our waste-to-durable-carbon-removal concept">بر ایده «پسماند به حذف بادوام کربن» ما (Design Studio) بنا شده</li>
+      <li data-fa="اعتبارسنجی میدانی + اهداف عملکردی قابل‌اندازه‌گیری" data-en="Real-world validation + measurable performance targets">اعتبارسنجی میدانی + اهداف عملکردی قابل‌اندازه‌گیری</li>
+      <li data-fa="کنسرسیوم شرکا هم‌اکنون در حال شکل‌گیری است" data-en="Consortium now forming for the partner-development phase">کنسرسیوم شرکا هم‌اکنون در حال شکل‌گیری است</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="دستاوردها" data-en="Traction">دستاوردها</h2>
+    <ul>
+      <li data-fa="گفت‌وگوی بین‌المللی هوای پاک، استانبول (سپتامبر ۲۰۲۶)" data-en="Intl. Clean Air Dialogue, Istanbul (Sept 2026)">گفت‌وگوی بین‌المللی هوای پاک، استانبول (سپتامبر ۲۰۲۶)</li>
+      <li data-fa="ارتباط با MoveGreen (قرقیزستان) و Almaty Air Initiative" data-en="Outreach: MoveGreen (Kyrgyzstan), Almaty Air Initiative">ارتباط با MoveGreen (قرقیزستان) و Almaty Air Initiative</li>
+      <li data-fa="دموی زنده: پورتال پژوهشی MHWS + ماژول گرنت" data-en="Live demo: MHWS research portal + grants module">دموی زنده: پورتال پژوهشی MHWS + ماژول گرنت</li>
+      <li data-fa="فضای Hugging Face با سندباکس دانشگاهی" data-en="Hugging Face Space with academic sandbox">فضای Hugging Face با سندباکس دانشگاهی</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="درخواست همکاری" data-en="Partnership Ask">درخواست همکاری</h2>
+    <ul>
+      <li data-fa="جامعه مدنی: اعتبارسنجی حسگری، پایش نقاط داغ، رسانه" data-en="Civil society: sensor validation, hotspot monitoring, media">جامعه مدنی: اعتبارسنجی حسگری، پایش نقاط داغ، رسانه</li>
+      <li data-fa="بهره‌برداران پسماند/دفن‌گاه: سایت پایلوت و دسترسی به داده" data-en="Waste / landfill operators: pilot sites & data access">بهره‌برداران پسماند/دفن‌گاه: سایت پایلوت و دسترسی به داده</li>
+      <li data-fa="دانشگاه‌ها: پژوهش + روش‌شناسی MRV" data-en="Universities: research + MRV methodology">دانشگاه‌ها: پژوهش + روش‌شناسی MRV</li>
+      <li data-fa="اسپانسرها: تأمین مالی پایلوت و مقیاس‌دهی" data-en="Sponsors: pilot funding & scale-up">اسپانسرها: تأمین مالی پایلوت و مقیاس‌دهی</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="به ما بپیوندید 🌱" data-en="Join Us 🌱">به ما بپیوندید 🌱</h2>
+    <ul>
+      <li data-fa="سهیل سبزواری — ابتکار GreenHope" data-en="Soheil Sabzevari — GreenHope Initiative">سهیل سبزواری — ابتکار GreenHope</li>
+      <li>LinkedIn: linkedin.com/in/soheil-sabzevari-746237173</li>
+      <li>WhatsApp: +1 208 503 3653</li>
+    </ul>
+    <p class="quote" data-fa="«نقاط کور متان را به اقدام اقلیمی تبدیل کنیم.»" data-en="“Let's turn methane blind spots into climate action.”">«نقاط کور متان را به اقدام اقلیمی تبدیل کنیم.»</p>
+  </section>
+</div>
+<div class="nav">
+  <button onclick="go(-1)">→</button><span id="counter">1 / 8</span><button onclick="go(1)">←</button>
+</div>
+<div class="footer">GreenHope Initiative · Soheil Sabzevari · Oct 2026</div>
+<script>
+let cur=0;const slides=document.querySelectorAll('.slide');
+function go(d){slides[cur].classList.remove('active');cur=(cur+d+slides.length)%slides.length;slides[cur].classList.add('active');document.getElementById('counter').textContent=(cur+1)+' / '+slides.length;}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(document.documentElement.dir==='rtl'?1:-1);if(e.key==='ArrowRight')go(document.documentElement.dir==='rtl'?-1:1);});
+function setLang(l){document.querySelectorAll('[data-fa]').forEach(el=>{el.textContent=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');});document.documentElement.lang=l;document.documentElement.dir=(l==='fa')?'rtl':'ltr';document.getElementById('btnFa').classList.toggle('active',l==='fa');document.getElementById('btnEn').classList.toggle('active',l==='en');}
+</script>
+</body>
+</html>

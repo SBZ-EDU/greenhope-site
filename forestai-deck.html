@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForestAI — پیچ‌دک | Pitch Deck</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.top{width:100%;max-width:960px;display:flex;justify-content:space-between;align-items:center;padding:14px 20px}
+.top .brand{color:#7cf2a8;font-weight:bold}
+.langbar button{background:transparent;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:6px 20px;cursor:pointer;font-family:inherit;margin:0 4px}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+.deck{width:100%;max-width:960px;flex:1;display:flex;padding:6px 20px 10px}
+.slide{display:none;width:100%;background:#12291d;border:1px solid #2c7a4b;border-radius:18px;padding:44px 40px;min-height:52vh}
+.slide.active{display:block}
+.slide h1{font-size:2.6rem;color:#7cf2a8;margin-bottom:10px}
+.slide h2{font-size:1.7rem;color:#7cf2a8;margin-bottom:18px}
+.slide p.sub{font-size:1.15rem;color:#d9efe1;margin-bottom:6px}
+.slide ul{list-style:none;margin-top:6px}
+.slide li{font-size:1.12rem;padding:9px 0 9px 8px;border-bottom:1px solid #1d3a28;color:#e8f5ec}
+.slide li::before{content:"◾ ";color:#22c55e;font-size:.85rem}
+.slide .quote{margin-top:22px;font-size:1.2rem;color:#7cf2a8;font-style:italic}
+.nav{display:flex;gap:12px;align-items:center;padding:14px}
+.nav button{background:#22c55e;color:#06240f;border:none;border-radius:10px;padding:10px 26px;font-size:1rem;cursor:pointer;font-family:inherit;font-weight:bold}
+.nav button:hover{background:#4ade80}
+#counter{color:#7ba78d;min-width:70px;text-align:center}
+.footer{color:#7ba78d;font-size:.8rem;padding-bottom:18px;text-align:center;direction:ltr}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand">🌲 ForestAI — Pitch Deck</div>
+  <div class="langbar"><button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button><button id="btnEn" onclick="setLang('en')">English</button></div>
+</div>
+<div class="deck">
+  <section class="slide active">
+    <h1>ForestAI</h1>
+    <p class="sub" data-fa="گرنت × پتنت × هوش مصنوعی — برای استارتاپ‌های فناوری آتش‌سوزی جنگل" data-en="Grants × Patents × AI — for wildfire-tech ventures">گرنت × پتنت × هوش مصنوعی — برای استارتاپ‌های فناوری آتش‌سوزی جنگل</p>
+    <p class="sub" data-fa="پیدا کن. مذاکره کن. گرنت را ببر." data-en="Find it. Negotiate it. Win the grant.">پیدا کن. مذاکره کن. گرنت را ببر.</p>
+    <p class="quote" data-fa="سهیل سبزواری" data-en="Soheil Sabzevari">سهیل سبزواری</p>
+  </section>
+  <section class="slide">
+    <h2 data-fa="مشکل" data-en="The Problem">مشکل</h2>
+    <ul>
+      <li data-fa="استارتاپ‌های سبز گرنت‌ها را از دست می‌دهند: کشف گرنت دستی و کند است" data-en="Green startups miss grants: discovery is manual & slow">استارتاپ‌های سبز گرنت‌ها را از دست می‌دهند: کشف گرنت دستی و کند است</li>
+      <li data-fa="پیدا کردن شرکت همکار مناسب ماه‌ها طول می‌کشد" data-en="Finding the right co-applicant company takes months">پیدا کردن شرکت همکار مناسب ماه‌ها طول می‌کشد</li>
+      <li data-fa="ساختار قرارداد (JV / لیسانس / SPV) به وکیل گران نیاز دارد" data-en="Deal structure (JV / license / SPV) needs expensive lawyers">ساختار قرارداد (JV / لیسانس / SPV) به وکیل گران نیاز دارد</li>
+      <li data-fa="مهلت‌ها می‌گذرند قبل از اینکه مذاکره شروع شود" data-en="Deadlines pass before negotiation even starts">مهلت‌ها می‌گذرند قبل از اینکه مذاکره شروع شود</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="راهکار" data-en="The Solution">راهکار</h2>
+    <ul>
+      <li data-fa="یک فضای کاری هوشمند: کشف گرنت، تطبیق شرکت، پیش‌نویس شرایط قرارداد" data-en="One AI workspace: discover grants, match companies, draft deal terms">یک فضای کاری هوشمند: کشف گرنت، تطبیق شرکت، پیش‌نویس شرایط قرارداد</li>
+      <li data-fa="فهرست رتبه‌بندی‌شده شرکا با نمره و دلیل، به‌صورت زنده" data-en="Live-ranked partner shortlists with scores & rationale">فهرست رتبه‌بندی‌شده شرکا با نمره و دلیل، به‌صورت زنده</li>
+      <li data-fa="یادداشت حقوقی خودکار: تقسیم پتنت، بندها، تایم‌لاین" data-en="Auto-generated legal memos: IP split, clauses, timelines">یادداشت حقوقی خودکار: تقسیم پتنت، بندها، تایم‌لاین</li>
+      <li data-fa="استراتژی قدم‌به‌قدم از امروز تا ارسال" data-en="Step-by-step strategy from today to Submit">استراتژی قدم‌به‌قدم از امروز تا ارسال</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="چطور کار می‌کند؟" data-en="How It Works">چطور کار می‌کند؟</h2>
+    <ul>
+      <li data-fa="۱. یک گرنت انتخاب کن (NSF ،UKRI ،USDA و...)" data-en="1. Pick a grant (NSF, UKRI, USDA, ...)">۱. یک گرنت انتخاب کن (NSF ،UKRI ،USDA و...)</li>
+      <li data-fa="۲. هوش مصنوعی بهترین شرکت‌ها را رتبه می‌کند: نمره + نقش + قدم بعدی" data-en="2. AI ranks best-fit companies: score + role + next step">۲. هوش مصنوعی بهترین شرکت‌ها را رتبه می‌کند: نمره + نقش + قدم بعدی</li>
+      <li data-fa="۳. مشاور، ساختار همکاری و نکات قراردادی را می‌نویسد" data-en="3. Advisor drafts partnership structure & contract points">۳. مشاور، ساختار همکاری و نکات قراردادی را می‌نویسد</li>
+      <li data-fa="۴. تایم‌لاین تو را به میز مذاکره می‌رساند" data-en="4. Timeline drives you to the negotiation table">۴. تایم‌لاین تو را به میز مذاکره می‌رساند</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="موتور هوش مصنوعی" data-en="AI Engine">موتور هوش مصنوعی</h2>
+    <ul>
+      <li data-fa="Claude Haiku 4.5 برای تطبیق زنده (استریم SSE)" data-en="Claude Haiku 4.5 for live matching (SSE streaming)">Claude Haiku 4.5 برای تطبیق زنده (استریم SSE)</li>
+      <li data-fa="Claude Sonnet 4.6 برای تحلیل عمیق" data-en="Claude Sonnet 4.6 for deep analysis">Claude Sonnet 4.6 برای تحلیل عمیق</li>
+      <li data-fa="بک‌اند FastAPI + فرانت React با خروجی ساخت‌یافته JSON" data-en="FastAPI backend + React frontend, JSON-structured outputs">بک‌اند FastAPI + فرانت React با خروجی ساخت‌یافته JSON</li>
+      <li data-fa="سورس کامل + پرامپت‌ها برای شرکا در دسترس است" data-en="Full source + prompts available for partners">سورس کامل + پرامپت‌ها برای شرکا در دسترس است</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="دستاوردها" data-en="Traction">دستاوردها</h2>
+    <ul>
+      <li data-fa="دموهای زنده: ماژول تطبیق + مشاور حقوقی" data-en="Live demos: Match + Legal Advisor modules">دموهای زنده: ماژول تطبیق + مشاور حقوقی</li>
+      <li data-fa="نمونه‌های واقعی: یادداشت‌های NSF / UKRI / USDA" data-en="Real samples: NSF / UKRI / USDA grant-company memos">نمونه‌های واقعی: یادداشت‌های NSF / UKRI / USDA</li>
+      <li data-fa="۶+ شرکت نمونه و ۴ گرنت فعال به‌صورت پیش‌فرض" data-en="6+ sample companies, 4 active grants built in">۶+ شرکت نمونه و ۴ گرنت فعال به‌صورت پیش‌فرض</li>
+      <li data-fa="رابط دوزبانه (فارسی/انگلیسی)، تست‌شده با کاربر واقعی" data-en="Bilingual (FA/EN) UI, beta-tested with users">رابط دوزبانه (فارسی/انگلیسی)، تست‌شده با کاربر واقعی</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="درخواست ما" data-en="The Ask">درخواست ما</h2>
+    <ul>
+      <li data-fa="اسپانسرها: تأمین استقرار پایلوت و مقیاس API" data-en="Sponsors: fund pilot deployments & API scale">اسپانسرها: تأمین استقرار پایلوت و مقیاس API</li>
+      <li data-fa="شرکای تجاری: توسعه مشترک و لیسانس ماژول‌ها" data-en="Commercial partners: co-develop & license modules">شرکای تجاری: توسعه مشترک و لیسانس ماژول‌ها</li>
+      <li data-fa="دانشگاه‌ها: همکاری پژوهشی + مطالعات اعتبارسنجی" data-en="Universities: research collabs + validation studies">دانشگاه‌ها: همکاری پژوهشی + مطالعات اعتبارسنجی</li>
+      <li data-fa="شبکه حقوقی: بازبینی قالب‌ها و مشاوره" data-en="Legal network: template review & counsel">شبکه حقوقی: بازبینی قالب‌ها و مشاوره</li>
+    </ul>
+  </section>
+  <section class="slide">
+    <h2 data-fa="تماس 📩" data-en="Contact 📩">تماس 📩</h2>
+    <ul>
+      <li data-fa="سهیل سبزواری" data-en="Soheil Sabzevari">سهیل سبزواری</li>
+      <li>LinkedIn: linkedin.com/in/soheil-sabzevari-746237173</li>
+      <li>WhatsApp: +1 208 503 3653</li>
+    </ul>
+    <p class="quote" data-fa="«پیدا کن. مذاکره کن. گرنت را ببر.»" data-en="“Find it. Negotiate it. Win the grant.”">«پیدا کن. مذاکره کن. گرنت را ببر.»</p>
+  </section>
+</div>
+<div class="nav">
+  <button onclick="go(-1)">→</button><span id="counter">1 / 8</span><button onclick="go(1)">←</button>
+</div>
+<div class="footer">ForestAI · Soheil Sabzevari · Oct 2026</div>
+<script>
+let cur=0;const slides=document.querySelectorAll('.slide');
+function go(d){slides[cur].classList.remove('active');cur=(cur+d+slides.length)%slides.length;slides[cur].classList.add('active');document.getElementById('counter').textContent=(cur+1)+' / '+slides.length;}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(document.documentElement.dir==='rtl'?1:-1);if(e.key==='ArrowRight')go(document.documentElement.dir==='rtl'?-1:1);});
+function setLang(l){document.querySelectorAll('[data-fa]').forEach(el=>{el.textContent=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');});document.documentElement.lang=l;document.documentElement.dir=(l==='fa')?'rtl':'ltr';document.getElementById('btnFa').classList.toggle('active',l==='fa');document.getElementById('btnEn').classList.toggle('active',l==='en');}
+</script>
+</body>
+</html>

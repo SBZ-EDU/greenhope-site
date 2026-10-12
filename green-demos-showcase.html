@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دموهای GreenHope و ForestAI | GreenHope & ForestAI Demos</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',Tahoma,Arial,sans-serif; background:#0d1f16; color:#e8f5ec; line-height:1.9; }
+  [dir="ltr"] body, body.ltr { font-family:'Segoe UI',Arial,sans-serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding:24px 18px 60px; }
+  header.hero { text-align:center; padding:36px 16px 28px; background:linear-gradient(135deg,#123524,#1d5c38); border-radius:18px; margin-bottom:26px; border:1px solid #2c7a4b; }
+  header.hero h1 { font-size:1.7rem; margin-bottom:8px; }
+  header.hero p { color:#bfe3cc; font-size:1rem; }
+  .langbar { display:flex; gap:10px; justify-content:center; margin:18px 0 4px; }
+  .langbar button { background:#0d1f16; color:#bfe3cc; border:1px solid #2c7a4b; border-radius:999px; padding:8px 26px; cursor:pointer; font-size:.95rem; font-family:inherit; }
+  .langbar button.active { background:#2c7a4b; color:#fff; font-weight:bold; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; }
+  @media (max-width:760px){ .grid{grid-template-columns:1fr;} }
+  .card { background:#12291d; border:1px solid #2c7a4b; border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:10px; }
+  .card h2 { font-size:1.15rem; color:#7cf2a8; }
+  .card h3 { font-size:.9rem; color:#9fd8b4; font-weight:normal; }
+  .badge { display:inline-block; font-size:.8rem; border-radius:999px; padding:3px 14px; font-weight:bold; width:fit-content; }
+  .live { background:#14532d; color:#86efac; border:1px solid #22c55e; }
+  .sleep { background:#4a3a10; color:#fcd34d; border:1px solid #f59e0b; }
+  .off { background:#4c1d1d; color:#fca5a5; border:1px solid #ef4444; }
+  .card p, .card li { font-size:.92rem; color:#d9efe1; }
+  .card ul { padding-right:20px; }
+  [dir="ltr"] .card ul { padding-right:0; padding-left:20px; }
+  .tech { background:#0d1f16; border:1px dashed #2c7a4b; border-radius:10px; padding:8px 12px; font-size:.85rem; color:#a7e3c0; }
+  .links { margin-top:auto; display:flex; flex-direction:column; gap:8px; padding-top:8px; }
+  .links a.btn { display:block; text-align:center; background:#22c55e; color:#06240f; font-weight:bold; border-radius:10px; padding:10px; text-decoration:none; font-size:.92rem; }
+  .links a.btn:hover { background:#4ade80; }
+  .links a.btn.dim { background:transparent; border:1px solid #2c7a4b; color:#7cf2a8; font-weight:normal; }
+  .url { font-size:.75rem; color:#7ba78d; word-break:break-all; direction:ltr; text-align:left; }
+  footer { text-align:center; margin-top:30px; color:#7ba78d; font-size:.85rem; }
+  .note { background:#12291d; border:1px solid #f59e0b; border-radius:14px; padding:16px 20px; margin-top:22px; font-size:.9rem; color:#fde9c0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1 data-fa="🌲 دموهای GreenHope و ForestAI" data-en="🌲 GreenHope & ForestAI Demos">🌲 دموهای GreenHope و ForestAI</h1>
+    <p data-fa="پنج دموی ساخته‌شده برای کشف گرنت، تحلیل وضعیت، مشاوره همکاری و تخمین آتش‌سوزی — همراه با وضعیت، امکانات و لینک هر کدام" data-en="Five demos built for grant discovery, status analysis, partnership advisory and fire estimation — each with status, features and links">پنج دموی ساخته‌شده برای کشف گرنت، تحلیل وضعیت، مشاوره همکاری و تخمین آتش‌سوزی — همراه با وضعیت، امکانات و لینک هر کدام</p>
+    <div class="langbar">
+      <button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button>
+      <button id="btnEn" onclick="setLang('en')">English</button>
+    </div>
+  </header>
+
+  <div class="grid">
+
+    <!-- 1. GreenHope / MHWS -->
+    <div class="card">
+      <span class="badge live" data-fa="🟢 زنده و فعال" data-en="🟢 Live">🟢 زنده و فعال</span>
+      <h2 data-fa="پروژه امید سبز — پورتال پژوهشی و هشدار چندمخاطره‌ای (MHWS)" data-en="GreenHope — Research Portal & Multi-Hazard Warning System (MHWS)">پروژه امید سبز — پورتال پژوهشی و هشدار چندمخاطره‌ای (MHWS)</h2>
+      <h3 data-fa="کاشت درخت با هوش مصنوعی · شبیه‌سازی دانشگاهی لایه دوم" data-en="AI-assisted tree planting · Layer-2 academic simulation">کاشت درخت با هوش مصنوعی · شبیه‌سازی دانشگاهی لایه دوم</h3>
+      <p data-fa="سکوی فارسی «امید سبز» با اتصال زنده به سامانه هشدار چندمخاطره‌ای روی Hugging Face؛ شبیه‌سازی چندمتغیره، پایش زنده، تب‌های دانشگاهی و گرنت، و ابزارهای نگارش علمی." data-en="Persian GreenHope platform, live-connected to the Multi-Hazard Warning System on Hugging Face; multi-variable simulation, live monitoring, academic & grants tabs, and scientific writing tools.">سکوی فارسی «امید سبز» با اتصال زنده به سامانه هشدار چندمخاطره‌ای روی Hugging Face؛ شبیه‌سازی چندمتغیره، پایش زنده، تب‌های دانشگاهی و گرنت، و ابزارهای نگارش علمی.</p>
+      <ul>
+        <li data-fa="سندباکس MHWS: ورود مختصات و تاریخ هدف + الگوهای آماده (دهلی، کالیفرنیا، آمازون)" data-en="MHWS sandbox: coordinates + target date input with presets (Delhi, California, Amazon)">سندباکس MHWS: ورود مختصات و تاریخ هدف + الگوهای آماده (دهلی، کالیفرنیا، آمازون)</li>
+        <li data-fa="تب‌های دانشگاهی (Academic) و گرنت‌ها (Grants)" data-en="Academic and Grants tabs">تب‌های دانشگاهی (Academic) و گرنت‌ها (Grants)</li>
+        <li data-fa="نویسنده مقاله علمی با AI و سنتز PapersWithCode (چکیده، متدولوژی، کد PyTorch/TensorFlow/JAX، مقایسه SOTA)" data-en="AI paper writer & PapersWithCode synthesis (abstract, methodology, PyTorch/TensorFlow/JAX code, SOTA comparison)">نویسنده مقاله علمی با AI و سنتز PapersWithCode (چکیده، متدولوژی، کد PyTorch/TensorFlow/JAX، مقایسه SOTA)</li>
+        <li data-fa="ماژول «تحلیل و بهبود با هوش مصنوعی» برای ارتقای خودکار هر تب" data-en="“Analyze & improve with AI” module for automatic tab upgrades">ماژول «تحلیل و بهبود با هوش مصنوعی» برای ارتقای خودکار هر تب</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: اتصال زنده به Hugging Face Space (Gradio) + تحلیل‌گر AI داخلی" data-en="🤖 AI: live Hugging Face Space link (Gradio) + built-in AI analyzer">🤖 هوش مصنوعی: اتصال زنده به Hugging Face Space (Gradio) + تحلیل‌گر AI داخلی</div>
+      <div class="links">
+        <a class="btn" href="https://ais-pre-kvk7h2bt753l3pa7glmq2z-58110825943.europe-west2.run.app/?tab=academic" target="_blank" data-fa="باز کردن تب دانشگاهی" data-en="Open Academic tab">باز کردن تب دانشگاهی</a>
+        <a class="btn dim" href="https://ais-pre-kvk7h2bt753l3pa7glmq2z-58110825943.europe-west2.run.app/?tab=grants" target="_blank" data-fa="باز کردن تب گرنت‌ها" data-en="Open Grants tab">باز کردن تب گرنت‌ها</a>
+        <a class="btn dim" href="https://huggingface.co/spaces/SoSa123456/multi-hazard-warning-system" target="_blank">Hugging Face Space: MHWS</a>
+      </div>
+    </div>
+
+    <!-- 2. ForestAI Match -->
+    <div class="card">
+      <span class="badge sleep" data-fa="🟡 پیش‌نمایش فعال · بک‌اند خواب" data-en="🟡 Preview up · backend asleep">🟡 پیش‌نمایش فعال · بک‌اند خواب</span>
+      <h2 data-fa="فارست‌ای‌آی — تطبیق هوشمند شرکت‌ها (Match)" data-en="ForestAI — Smart Company Matching">فارست‌ای‌آی — تطبیق هوشمند شرکت‌ها (Match)</h2>
+      <h3 data-fa="گرنت · پتنت · هوش مصنوعی — نسخه green-tech-collab" data-en="Grants · Patents · AI — green-tech-collab build">گرنت · پتنت · هوش مصنوعی — نسخه green-tech-collab</h3>
+      <p data-fa="گرنت را انتخاب کن؛ AI بهترین شرکت‌های همکار را به‌صورت زنده رتبه‌بندی می‌کند: نمره، دلیل، نقش پیشنهادی، اقدام بعدی و استراتژی جذب ائتلاف (تشخیص، پیش‌بینی، اجرا)." data-en="Pick a grant; AI live-ranks the best partner companies: score, rationale, proposed role, next action, plus coalition strategy (detect, predict, respond).">گرنت را انتخاب کن؛ AI بهترین شرکت‌های همکار را به‌صورت زنده رتبه‌بندی می‌کند: نمره، دلیل، نقش پیشنهادی، اقدام بعدی و استراتژی جذب ائتلاف (تشخیص، پیش‌بینی، اجرا).</p>
+      <ul>
+        <li data-fa="رتبه‌بندی ۵ شرکت برتر برای هر گرنت (نمونه: NSF و UKRI)" data-en="Top-5 company ranking per grant (e.g. NSF, UKRI)">رتبه‌بندی ۵ شرکت برتر برای هر گرنت (نمونه: NSF و UKRI)</li>
+        <li data-fa="کشف خودکار گرنت‌های wildfire+AI با خروجی JSON" data-en="Automatic wildfire+AI grant discovery with JSON output">کشف خودکار گرنت‌های wildfire+AI با خروجی JSON</li>
+        <li data-fa="استریم لحظه‌ای پیشنهادها (SSE)" data-en="Real-time suggestion streaming (SSE)">استریم لحظه‌ای پیشنهادها (SSE)</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: Claude Haiku 4.5 (تطبیق) · Sonnet 4.6 — بک‌اند FastAPI + فرانت React" data-en="🤖 AI: Claude Haiku 4.5 (matching) · Sonnet 4.6 — FastAPI backend + React frontend">🤖 هوش مصنوعی: Claude Haiku 4.5 (تطبیق) · Sonnet 4.6 — بک‌اند FastAPI + فرانت React</div>
+      <div class="links">
+        <a class="btn" href="https://green-tech-collab.preview.emergentagent.com/match" target="_blank" data-fa="باز کردن صفحه تطبیق" data-en="Open Match page">باز کردن صفحه تطبیق</a>
+        <div class="url">green-tech-collab.preview.emergentagent.com/match</div>
+      </div>
+    </div>
+
+    <!-- 3. ForestAI Advisor -->
+    <div class="card">
+      <span class="badge sleep" data-fa="🟡 پیش‌نمایش فعال · بک‌اند خواب" data-en="🟡 Preview up · backend asleep">🟡 پیش‌نمایش فعال · بک‌اند خواب</span>
+      <h2 data-fa="فارست‌ای‌آی — مشاور حقوقی همکاری (Advisor)" data-en="ForestAI — Partnership Legal Advisor">فارست‌ای‌آی — مشاور حقوقی همکاری (Advisor)</h2>
+      <h3 data-fa="نوع همکاری · تقسیم پتنت · بندهای قرارداد · تایم‌لاین" data-en="Deal type · Patent split · Contract clauses · Timeline">نوع همکاری · تقسیم پتنت · بندهای قرارداد · تایم‌لاین</h3>
+      <p data-fa="برای هر جفت «گرنت + شرکت» به‌صورت هوشمند: نوع همکاری (SPV / پیمانکاری+لیسانس)، تقسیم پتنت و درآمد گرنت، نقش سرمایه‌گذار، بندهای کلیدی قرارداد و تایم‌لاین قدم‌به‌قدم تا مهلت ارسال." data-en="For each “grant + company” pair it generates: deal type (SPV / contract+license), patent & grant-income split, investor role, key clauses and a step-by-step timeline to the deadline.">برای هر جفت «گرنت + شرکت» به‌صورت هوشمند: نوع همکاری (SPV / پیمانکاری+لیسانس)، تقسیم پتنت و درآمد گرنت، نقش سرمایه‌گذار، بندهای کلیدی قرارداد و تایم‌لاین قدم‌به‌قدم تا مهلت ارسال.</p>
+      <ul>
+        <li data-fa="نمونه واقعی: گرنت UKRI با FireLine Research (مدل SPV پنجاه-پنجاه)" data-en="Real sample: UKRI grant with FireLine Research (50-50 SPV model)">نمونه واقعی: گرنت UKRI با FireLine Research (مدل SPV پنجاه-پنجاه)</li>
+        <li data-fa="نمونه واقعی: گرنت USDA با Aerocam Vision (پیمانکاری + لیسانس فناوری)" data-en="Real sample: USDA grant with Aerocam Vision (contract + tech license)">نمونه واقعی: گرنت USDA با Aerocam Vision (پیمانکاری + لیسانس فناوری)</li>
+        <li data-fa="بخش پیشنهاد نوع مشارکت به شرکت‌ها + پیدا کردن افراد" data-en="Partnership-type proposals to companies + expert finder">بخش پیشنهاد نوع مشارکت به شرکت‌ها + پیدا کردن افراد</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: تولید زنده تحلیل حقوقی و تایم‌لاین با Claude" data-en="🤖 AI: live legal analysis & timeline generation with Claude">🤖 هوش مصنوعی: تولید زنده تحلیل حقوقی و تایم‌لاین با Claude</div>
+      <div class="links">
+        <a class="btn" href="https://green-tech-collab.preview.emergentagent.com/advisor" target="_blank" data-fa="باز کردن مشاور حقوقی" data-en="Open Legal advisor">باز کردن مشاور حقوقی</a>
+        <div class="url">green-tech-collab.preview.emergentagent.com/advisor</div>
+      </div>
+    </div>
+
+    <!-- 4. green-match-ai -->
+    <div class="card">
+      <span class="badge sleep" data-fa="🟡 پیش‌نمایش فعال · بک‌اند خواب" data-en="🟡 Preview up · backend asleep">🟡 پیش‌نمایش فعال · بک‌اند خواب</span>
+      <h2 data-fa="فارست‌ای‌آی — نسخه green-match-ai" data-en="ForestAI — green-match-ai build">فارست‌ای‌آی — نسخه green-match-ai</h2>
+      <h3 data-fa="داشبورد یکپارچه: تطبیق، ابزارها، سورس‌کد" data-en="Unified dashboard: matching, tools, source code">داشبورد یکپارچه: تطبیق، ابزارها، سورس‌کد</h3>
+      <p data-fa="بیلد دیگر همان پلتفرم فارست‌ای‌آی با داشبورد ماژولار: تطبیق هوشمند، مقایسه ابزارهای نگارش گرنت، مشاهده و دانلود کامل سورس‌کد (FastAPI + React + پرامپت‌های AI)." data-en="Another build of the same ForestAI platform with a modular dashboard: smart matching, grant-writing tool comparison, and full source viewing/download (FastAPI + React + AI prompts).">بیلد دیگر همان پلتفرم فارست‌ای‌آی با داشبورد ماژولار: تطبیق هوشمند، مقایسه ابزارهای نگارش گرنت، مشاهده و دانلود کامل سورس‌کد (FastAPI + React + پرامپت‌های AI).</p>
+      <ul>
+        <li data-fa="۶+ شرکت نمونه و ۴ گرنت فعال به‌صورت پیش‌فرض" data-en="6+ sample companies and 4 active grants by default">۶+ شرکت نمونه و ۴ گرنت فعال به‌صورت پیش‌فرض</li>
+        <li data-fa="دانلود forestai-source.zip برای ادامه توسعه" data-en="forestai-source.zip download for further development">دانلود forestai-source.zip برای ادامه توسعه</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: Claude Sonnet 4.6" data-en="🤖 AI: Claude Sonnet 4.6">🤖 هوش مصنوعی: Claude Sonnet 4.6</div>
+      <div class="links">
+        <a class="btn" href="https://green-match-ai.preview.emergentagent.com/" target="_blank" data-fa="باز کردن دمو" data-en="Open demo">باز کردن دمو</a>
+        <div class="url">green-match-ai.preview.emergentagent.com</div>
+      </div>
+    </div>
+
+    <!-- 5. Replit -->
+    <div class="card">
+      <span class="badge off" data-fa="🔴 آفلاین — نیاز به انتشار مجدد" data-en="🔴 Offline — needs republishing">🔴 آفلاین — نیاز به انتشار مجدد</span>
+      <h2 data-fa="Grant Discovery AI — اتوماسیون گرنت، شرکت و پتنت" data-en="Grant Discovery AI — Grant/Company/Patent automation">Grant Discovery AI — اتوماسیون گرنت، شرکت و پتنت</h2>
+      <h3 data-fa="نسخه Replit (همکاری با نگار منافی)" data-en="Replit build (collab. with Negar Manafi)">نسخه Replit (همکاری با نگار منافی)</h3>
+      <p data-fa="سامانه اتوماسیون ارتباط بین گرنت، شرکت‌های کاندید همکاری و پتنت. در حال حاضر اپ روی Replit منتشر (deploy) نیست و برای کار کردن به API و انتشار مجدد نیاز دارد." data-en="Automation system linking grants, candidate partner companies and patents. Currently not published/deployed on Replit; needs API keys and republishing to run.">سامانه اتوماسیون ارتباط بین گرنت، شرکت‌های کاندید همکاری و پتنت. در حال حاضر اپ روی Replit منتشر (deploy) نیست و برای کار کردن به API و انتشار مجدد نیاز دارد.</p>
+      <ul>
+        <li data-fa="وضعیت فعلی: پیام This app isn't live yet" data-en="Current state: “This app isn't live yet” message">وضعیت فعلی: پیام This app isn't live yet</li>
+        <li data-fa="راه‌حل: ورود به Replit ← تزریق API ← Publish / Deploy" data-en="Fix: open Replit → add API keys → Publish / Deploy">راه‌حل: ورود به Replit ← تزریق API ← Publish / Deploy</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: پس از انتشار مجدد فعال می‌شود" data-en="🤖 AI: activates after republishing">🤖 هوش مصنوعی: پس از انتشار مجدد فعال می‌شود</div>
+      <div class="links">
+        <a class="btn dim" href="https://grant-discovery-ai--xczxc.replit.app" target="_blank" data-fa="تلاش برای باز کردن (فعلاً آفلاین)" data-en="Try opening (currently offline)">تلاش برای باز کردن (فعلاً آفلاین)</a>
+        <div class="url">grant-discovery-ai--xczxc.replit.app</div>
+      </div>
+    </div>
+
+    <!-- 6. CityAir by AQMx -->
+    <div class="card">
+      <span class="badge live" data-fa="🟢 زنده و فعال" data-en="🟢 Live">🟢 زنده و فعال</span>
+      <h2 data-fa="سیتی‌ایر CityAir — آمادگی کیفیت هوا و تبادل نوآوری (AQMx)" data-en="CityAir by AQMx — Air-Quality Readiness & Innovation Exchange">سیتی‌ایر CityAir — آمادگی کیفیت هوا و تبادل نوآوری (AQMx)</h2>
+      <h3 data-fa="نمونه اولیه مستقل · داده نمایشی توضیح‌دار" data-en="Independent prototype · labelled illustrative data">نمونه اولیه مستقل · داده نمایشی توضیح‌دار</h3>
+      <p data-fa="سکوی آمادگی مدیریت کیفیت هوا برای شهرها: ارزیابی آمادگی در ۱۲ حوزه، ۲۰ پروفایل شهری (از جمله بیشکک و استانبول)، خلاصه‌های اجرایی، دستیار هوش مصنوعی و ربات تلگرام — با متدولوژی شفاف و کد باز." data-en="Air-quality management readiness platform for cities: 12-domain readiness assessment, 20 city profiles (incl. Bishkek & Istanbul), implementation briefs, AI assistant and Telegram bot — with transparent methodology and open code.">سکوی آمادگی مدیریت کیفیت هوا برای شهرها: ارزیابی آمادگی در ۱۲ حوزه، ۲۰ پروفایل شهری (از جمله بیشکک و استانبول)، خلاصه‌های اجرایی، دستیار هوش مصنوعی و ربات تلگرام — با متدولوژی شفاف و کد باز.</p>
+      <ul>
+        <li data-fa="ارزیابی ۱۲ حوزه: پایش، اسناد منابع، سیاهه انتشار، پیش‌بینی، سلامت، پسماند و حکمرانی" data-en="12 domains: monitoring, attribution, inventory, forecasting, health, waste & governance">ارزیابی ۱۲ حوزه: پایش، اسناد منابع، سیاهه انتشار، پیش‌بینی، سلامت، پسماند و حکمرانی</li>
+        <li data-fa="خلاصه‌های اجرایی از جمله غربالگری مرحله‌ای متان دفن‌گاه — هم‌افزایی مستقیم با GreenHope" data-en="Briefs incl. tiered landfill-methane screening — direct synergy with GreenHope">خلاصه‌های اجرایی از جمله غربالگری مرحله‌ای متان دفن‌گاه — هم‌افزایی مستقیم با GreenHope</li>
+        <li data-fa="داده زنده کیفیت هوا (Open-Meteo) برای ۶+ شهر + مقایسه حد WHO" data-en="Live air-quality data (Open-Meteo) for 6+ cities + WHO benchmark comparison">داده زنده کیفیت هوا (Open-Meteo) برای ۶+ شهر + مقایسه حد WHO</li>
+      </ul>
+      <div class="tech" data-fa="🤖 هوش مصنوعی: دستیار متکی به بازیابی (RAG) روی پایگاه دانش اختصاصی + ربات تلگرام سه‌زبانه" data-en="🤖 AI: retrieval-grounded (RAG) assistant on its own knowledge base + trilingual Telegram bot">🤖 هوش مصنوعی: دستیار متکی به بازیابی (RAG) روی پایگاه دانش اختصاصی + ربات تلگرام سه‌زبانه</div>
+      <div class="links">
+        <a class="btn" href="https://aqmx.atikova.com/" target="_blank" data-fa="باز کردن سیتی‌ایر" data-en="Open CityAir">باز کردن سیتی‌ایر</a>
+        <a class="btn dim" href="https://aqmx.atikova.com/#/methodology" target="_blank" data-fa="متدولوژی" data-en="Methodology">متدولوژی</a>
+        <a class="btn dim" href="https://t.me/AQMX_cityair_tracker_bot" target="_blank">Telegram Bot</a>
+        <a class="btn dim" href="https://github.com/Websites-by-AI/amqx-cityair" target="_blank">GitHub</a>
+        <div class="url">aqmx.atikova.com</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note" style="border-color:#22c55e;text-align:center"><span data-fa="🤝 بخش جدید «همکاران»: ۱۰ زمینه همکاری × ۱۰ همکار احتمالی با نوع، مقیاس و لینک —" data-en="🤝 New “Partners” section: 10 collaboration areas × 10 potential partners with type, scale & link —">🤝 بخش جدید «همکاران»: ۱۰ زمینه همکاری × ۱۰ همکار احتمالی با نوع، مقیاس و لینک —</span> <a href="partners.html" style="color:#7cf2a8;font-weight:bold"><span data-fa="مشاهده صفحه همکاران" data-en="View Partners page">مشاهده صفحه همکاران</span></a></div>
+
+  <div class="note" data-fa="💡 نکته: لینک‌های Emergent فقط «پیش‌نمایش فرانت‌اند» هستند و برای کارکرد کامل باید از داشبورد Emergent گزینه Wake up servers را بزنید (بک‌اند و کلید LLM لازم دارد). دمای Replit هم باید دوباره Publish شود. فقط پورتال «امید سبز» (run.app) الان کاملاً زنده است." data-en="💡 Note: Emergent links are “frontend preview only” — hit Wake up servers in the Emergent dashboard for full functionality (backend + LLM key required). The Replit app must be published again. Only the GreenHope portal (run.app) is fully live right now.">💡 نکته: لینک‌های Emergent فقط «پیش‌نمایش فرانت‌اند» هستند و برای کارکرد کامل باید از داشبورد Emergent گزینه Wake up servers را بزنید (بک‌اند و کلید LLM لازم دارد). دمای Replit هم باید دوباره Publish شود. فقط پورتال «امید سبز» (run.app) الان کاملاً زنده است.</div>
+
+  <footer data-fa="تهیه‌شده در اکتبر ۲۰۲۶ · GreenHope و ForestAI" data-en="Prepared October 2026 · GreenHope & ForestAI">تهیه‌شده در اکتبر ۲۰۲۶ · GreenHope و ForestAI</footer>
+
+</div>
+<script>
+function setLang(l){
+  document.querySelectorAll('[data-fa]').forEach(function(el){
+    el.innerHTML = (l==='fa') ? el.getAttribute('data-fa') : el.getAttribute('data-en');
+  });
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l==='fa') ? 'rtl' : 'ltr';
+  document.body.classList.toggle('ltr', l==='en');
+  document.getElementById('btnFa').classList.toggle('active', l==='fa');
+  document.getElementById('btnEn').classList.toggle('active', l==='en');
+}
+</script>
+</body>
+</html>
