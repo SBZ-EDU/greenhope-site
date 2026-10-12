@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ماژول بازاریابی AI | AI Marketing Module</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;line-height:1.9}
+.wrap{max-width:980px;margin:0 auto;padding:24px 18px 60px}
+header.hero{text-align:center;padding:30px 16px 22px;background:linear-gradient(135deg,#123524,#1d5c38);border-radius:18px;margin-bottom:18px;border:1px solid #2c7a4b}
+header.hero h1{font-size:1.45rem;margin-bottom:6px}
+header.hero p{color:#bfe3cc;font-size:.9rem}
+.langbar{display:flex;gap:8px;justify-content:center;margin:14px 0 4px;flex-wrap:wrap}
+.langbar button,.backbtn{background:#0d1f16;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:7px 22px;cursor:pointer;font-size:.88rem;font-family:inherit;text-decoration:none;display:inline-block}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+section.box{background:#12291d;border:1px solid #2c7a4b;border-radius:16px;padding:22px;margin-top:18px}
+section.box h2{color:#7cf2a8;font-size:1.15rem;margin-bottom:4px}
+section.box>p{color:#9fd8b4;font-size:.86rem;margin-bottom:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+@media(max-width:700px){.grid3{grid-template-columns:1fr}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+select,input[type=text]{background:#0d1f16;color:#e8f5ec;border:1px solid #2c7a4b;border-radius:8px;padding:8px 12px;font-family:inherit;font-size:.85rem;width:100%}
+label.lbl{font-size:.8rem;color:#9fd8b4;display:block;margin-bottom:4px}
+.msg{background:#0d1f16;border-radius:10px;padding:10px 14px;font-size:.85rem;color:#e8f5ec;margin:6px 0;white-space:pre-line}
+.out{border:1px dashed #2c7a4b;border-radius:12px;padding:12px 14px;margin-top:10px;background:#0f2318}
+.out h4{color:#7cf2a8;font-size:.92rem}
+button.copy{background:transparent;border:1px solid #2c7a4b;color:#7cf2a8;border-radius:8px;padding:4px 14px;cursor:pointer;font-family:inherit;font-size:.78rem;margin:2px}
+button.launch{background:#22c55e;color:#06240f;border:none;border-radius:8px;padding:7px 16px;cursor:pointer;font-family:inherit;font-weight:bold;font-size:.82rem;margin:2px}
+table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px}
+th{background:#0d1f16;color:#7cf2a8;padding:8px 6px;border:1px solid #2c7a4b}
+td{padding:7px 6px;border:1px solid #1d3a28;color:#d9efe1;vertical-align:middle}
+tr:nth-child(even) td{background:#0f2318}
+.task{display:flex;gap:8px;align-items:flex-start;font-size:.85rem;margin:6px 0;color:#d9efe1}
+.task input{margin-top:7px;accent-color:#22c55e}
+.note{background:#12291d;border:1px solid #f59e0b;border-radius:14px;padding:14px 18px;margin-top:20px;font-size:.85rem;color:#fde9c0}
+footer{text-align:center;margin-top:24px;color:#7ba78d;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1 data-fa="📣 ماژول بازاریابی AI" data-en="📣 AI Marketing Module">📣 ماژول بازاریابی AI</h1>
+  <p data-fa="مثل مدل آتیکووا: انتخاب پروژه و مخاطب ← تولید کیت چندکاناله (واتس‌اپ، تلگرام، لینکدین، X، ایمیل) ← لانچر فوری" data-en="Like the Atikova model: pick project & audience → multi-channel kit (WhatsApp, Telegram, LinkedIn, X, email) → instant launcher">مثل مدل آتیکووا: انتخاب پروژه و مخاطب ← تولید کیت چندکاناله (واتس‌اپ، تلگرام، لینکدین، X، ایمیل) ← لانچر فوری</p>
+  <div class="langbar">
+    <button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button>
+    <button id="btnEn" onclick="setLang('en')">English</button>
+    <a class="backbtn" href="index.html" data-fa="→ خانه" data-en="→ Home">→ خانه</a>
+    <a class="backbtn" href="outreach-tracker.html" data-fa="→ ترکر" data-en="→ Tracker">→ ترکر</a>
+  </div>
+</header>
+
+<section class="box">
+<h2 data-fa="۱. ⚙️ ژنراتور کمپین" data-en="1. ⚙️ Campaign generator">۱. ⚙️ ژنراتور کمپین</h2>
+<p data-fa="پروژه، مخاطب و زبان خروجی را انتخاب کن — کیت آماده می‌شود. نام و لینک را هم بده تا جایگذاری شود." data-en="Pick project, audience & output language — the kit is generated. Give name & link to fill in.">پروژه، مخاطب و زبان خروجی را انتخاب کن — کیت آماده می‌شود. نام و لینک را هم بده تا جایگذاری شود.</p>
+<div class="grid3">
+<div><label class="lbl" data-fa="پروژه" data-en="Project">پروژه</label><select id="sProj" onchange="render()"><option value="gh">🌱 GreenHope</option><option value="fa">🌲 ForestAI</option><option value="ca">🌆 CityAir</option></select></div>
+<div><label class="lbl" data-fa="مخاطب" data-en="Audience">مخاطب</label><select id="sAud" onchange="render()"><option value="sponsor" data-fa="💰 اسپانسر" data-en="💰 Sponsor">💰 اسپانسر</option><option value="gov" data-fa="🏛️ دولتی" data-en="🏛️ Government">🏛️ دولتی</option><option value="uni" data-fa="🎓 دانشگاه" data-en="🎓 University">🎓 دانشگاه</option><option value="company" data-fa="🏢 شرکت" data-en="🏢 Company">🏢 شرکت</option><option value="media" data-fa="📣 رسانه" data-en="📣 Media">📣 رسانه</option><option value="job" data-fa="💼 کارفرما" data-en="💼 Employer">💼 کارفرما</option></select></div>
+<div><label class="lbl" data-fa="زبان خروجی" data-en="Output language">زبان خروجی</label><select id="sLang" onchange="render()"><option value="fa">فارسی</option><option value="en">English</option><option value="tr">Türkçe</option></select></div>
+</div>
+<div class="grid2">
+<div><label class="lbl" data-fa="نام مخاطب (اختیاری)" data-en="Contact name (optional)">نام مخاطب (اختیاری)</label><input type="text" id="inName" oninput="render()" placeholder="{نام}"></div>
+<div><label class="lbl" data-fa="لینک پیچ‌دک/دمو (اختیاری)" data-en="Deck/demo link (optional)">لینک پیچ‌دک/دمو (اختیاری)</label><input type="text" id="inLink" oninput="render()" placeholder="{لینک}" dir="ltr"></div>
+</div>
+<div class="out"><h4 data-fa="💬 پیام چت (واتس‌اپ / تلگرام)" data-en="💬 Chat message (WhatsApp / Telegram)">💬 پیام چت (واتس‌اپ / تلگرام)</h4><div class="msg" id="oChat"></div><button class="copy" onclick="copyMsg('oChat',this)">Copy</button></div>
+<div class="out"><h4>LinkedIn</h4><div class="msg" id="oLi"></div><button class="copy" onclick="copyMsg('oLi',this)">Copy</button></div>
+<div class="out"><h4>X / Twitter</h4><div class="msg" id="oX" dir="ltr" style="text-align:left"></div><button class="copy" onclick="copyMsg('oX',this)">Copy</button></div>
+<div class="out"><h4>Email</h4><div class="msg" id="oSub" style="color:#7cf2a8"></div><div class="msg" id="oBody"></div><button class="copy" onclick="copyMsg('oBody',this)">Copy</button></div>
+</section>
+
+<section class="box">
+<h2 data-fa="۲. 🚀 لانچر فوری (مدل آتیکووا)" data-en="2. 🚀 Instant launcher (Atikova model)">۲. 🚀 لانچر فوری (مدل آتیکووا)</h2>
+<p data-fa="شماره موبایل تأییدشده را بده (فقط رقم، با کد کشور — مثل 9053...) بعد دکمه را بزن: واتس‌اپ با متن آماده باز می‌شود." data-en="Enter the verified mobile number (digits only, with country code — e.g. 9053...) then hit the button: WhatsApp opens with the ready text.">شماره موبایل تأییدشده را بده (فقط رقم، با کد کشور — مثل 9053...) بعد دکمه را بزن: واتس‌اپ با متن آماده باز می‌شود.</p>
+<div class="grid2">
+<div><label class="lbl" data-fa="شماره موبایل" data-en="Mobile number">شماره موبایل</label><input type="text" id="inPhone" placeholder="9053XXXXXXXX" dir="ltr"></div>
+<div><label class="lbl" data-fa="ایمیل مخاطب" data-en="Contact email">ایمیل مخاطب</label><input type="text" id="inMail" placeholder="name@org.com" dir="ltr"></div>
+</div>
+<div><button class="launch" onclick="goWA()">WhatsApp ↗</button><button class="launch" onclick="goTG()">Telegram ↗</button><button class="launch" onclick="goMail()">Email ↗</button></div>
+</section>
+
+<section class="box">
+<h2 data-fa="۳. 📌 لانچ سریع VIP (۸ لید برتر)" data-en="3. 📌 VIP quick-launch (top 8 leads)">۳. 📌 لانچ سریع VIP (۸ لید برتر)</h2>
+<p data-fa="از خروجی فعلی ژنراتور بالا استفاده می‌کند — اول پروژه/مخاطب/زبان را انتخاب کن." data-en="Uses the generator output above — pick project/audience/language first.">از خروجی فعلی ژنراتور بالا استفاده می‌کند — اول پروژه/مخاطب/زبان را انتخاب کن.</p>
+<table>
+<tr><th data-fa="لید" data-en="Lead">لید</th><th data-fa="اقدام" data-en="Action">اقدام</th></tr>
+<tr><td>MoveGreen 🌱 Bishkek</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>Almaty Air Initiative 🌆</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>İTÜ Çekirdek 🇹🇷 incubator</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>İTÜ ARI Teknokent 🇹🇷</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>YTÜ Yıldız Teknopark 🇹🇷</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>Teknopark İstanbul 🇹🇷 Pendik</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>TEMA Foundation 🇹🇷 NGO</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+<tr><td>Kloop 🇰🇬 media</td><td><button class="launch" onclick="goWA()">WA</button> <button class="launch" onclick="goTG()">TG</button> <button class="copy" onclick="copyMsg('oChat',this)">Copy</button> <button class="copy" onclick="goMail()">Mail</button></td></tr>
+</table>
+</section>
+
+<section class="box">
+<h2 data-fa="۴. ✅ خط لوله کمپین (۶ گام)" data-en="4. ✅ Campaign pipeline (6 steps)">۴. ✅ خط لوله کمپین (۶ گام)</h2>
+<p data-fa="مثل ماشین وضعیت آتیکووا — هر گام را تیک بزن:" data-en="Like the Atikova state machine — tick each step:">مثل ماشین وضعیت آتیکووا — هر گام را تیک بزن:</p>
+<label class="task"><input type="checkbox" id="k1" onchange="save()"><span data-fa="۱. انتخاب لیدها از ترکر (شروع با ۸ VIP)" data-en="1. Pick leads from tracker (start with the 8 VIPs)">۱. انتخاب لیدها از ترکر (شروع با ۸ VIP)</span></label>
+<label class="task"><input type="checkbox" id="k2" onchange="save()"><span data-fa="۲. تأیید کانال (موبایل واقعی؟ واتس‌اپ دارد؟)" data-en="2. Verify channel (real mobile? has WhatsApp?)">۲. تأیید کانال (موبایل واقعی؟ واتس‌اپ دارد؟)</span></label>
+<label class="task"><input type="checkbox" id="k3" onchange="save()"><span data-fa="۳. تولید کیت (پروژه + مخاطب + زبان)" data-en="3. Generate kit (project + audience + language)">۳. تولید کیت (پروژه + مخاطب + زبان)</span></label>
+<label class="task"><input type="checkbox" id="k4" onchange="save()"><span data-fa="۴. لانچ چندکاناله (واتس‌اپ، تلگرام، ایمیل)" data-en="4. Multi-channel launch (WhatsApp, Telegram, email)">۴. لانچ چندکاناله (واتس‌اپ، تلگرام، ایمیل)</span></label>
+<label class="task"><input type="checkbox" id="k5" onchange="save()"><span data-fa="۵. پیگیری روز ۲/۷/۱۴ (موتور ترکر)" data-en="5. Day 2/7/14 follow-up (tracker engine)">۵. پیگیری روز ۲/۷/۱۴ (موتور ترکر)</span></label>
+<label class="task"><input type="checkbox" id="k6" onchange="save()"><span data-fa="۶. ثبت نتیجه + مسیر موازی (تکنوپارک/گرنت)" data-en="6. Log result + parallel track (technopark/grants)">۶. ثبت نتیجه + مسیر موازی (تکنوپارک/گرنت)</span></label>
+</section>
+
+<div class="note" data-fa="💡 نکته مسئولانه (مثل آتیکووا): فقط به مخاطبی پیام بده که رضایت دارد یا تماس کاری عمومی است؛ شماره ثابت (02xx/0312) واتس‌اپ ندارد — اول موبایل را تأیید کن." data-en="💡 Responsible note (like Atikova): only message contacts with consent or public business lines; landlines have no WhatsApp — verify a mobile first.">💡 نکته مسئولانه (مثل آتیکووا): فقط به مخاطبی پیام بده که رضایت دارد یا تماس کاری عمومی است؛ شماره ثابت (02xx/0312) واتس‌اپ ندارد — اول موبایل را تأیید کن.</div>
+<footer data-fa="اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir" data-en="Oct 2026 · GreenHope & ForestAI & CityAir">اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir</footer>
+</div>
+<script>
+var MSGS={
+gh:{fa:{chat:"سلام {نام} 🌿 من سهیل سبزواری (GreenHope) هستم؛ با ماهواره و حسگر، متان نامرئی دفن‌گاه‌ها را شکار می‌کنیم (XPRIZE Mission Methane). {CTA} پیچ‌دک: {لینک}",
+li:"متان دفن‌گاه‌ها نامرئی است — اما از فضا دیده می‌شود 🛰️ در GreenHope داده Sentinel-2 و FIRMS ناسا را با حسگر زمینی ترکیب می‌کنیم تا نقاط داغ متان را پیدا و برای XPRIZE Mission Methane اعتبارسنجی کنیم. به‌دنبال شریک پایلوت در منطقه هستیم. {CTA}",
+x:"🛰️+📡 = شکار متان دفن‌گاه‌ها! GreenHope برای XPRIZE Mission Methane آماده می‌شود. شریک پایلوت می‌خواهیم 👇 {لینک}",
+esub:"همکاری پایلوت پایش متان (GreenHope × XPRIZE)",
+ebody:"با سلام،\nمن سهیل سبزواری (GreenHope) هستم. سکوی ما با ماهواره و حسگر زمینی، نقاط داغ متان دفن‌گاه‌ها را شناسایی و اعتبارسنجی می‌کند.\n{CTA}\nپیچ‌دک: {لینک}\nبا احترام، سهیل"},
+en:{chat:"Hi {name} 🌿 I'm Soheil Sabzevari (GreenHope) — we hunt invisible landfill methane with satellites + ground sensors (XPRIZE Mission Methane). {CTA} Deck: {link}",
+li:"Landfill methane is invisible — but visible from space 🛰️ At GreenHope we fuse Sentinel-2 + NASA FIRMS with ground sensors to find methane hotspots for XPRIZE Mission Methane. Seeking regional pilot partners. {CTA}",
+x:"🛰️+📡 = hunting landfill methane! GreenHope is gearing up for XPRIZE Mission Methane. We want pilot partners 👇 {link}",
+esub:"Methane-monitoring pilot collaboration (GreenHope × XPRIZE)",
+ebody:"Dear {name},\nI'm Soheil Sabzevari (GreenHope). Our platform finds and validates landfill methane hotspots with satellites + ground sensors.\n{CTA}\nDeck: {link}\nBest, Soheil"},
+tr:{chat:"Merhaba {ad} 🌿 Ben Soheil Sabzevari (GreenHope) — uydu + sensörlerle görünmez depo metanını avlıyoruz (XPRIZE Mission Methane). {CTA} Sunum: {link}",
+li:"Depo metanı görünmezdir — ama uzaydan görünür 🛰️ GreenHope'ta Sentinel-2 + NASA FIRMS verilerini yer sensörleriyle birleştirip XPRIZE Mission Methane için metan noktalarını buluyoruz. Bölgede pilot ortak arıyoruz. {CTA}",
+x:"🛰️+📡 = depo metanı avı! GreenHope, XPRIZE Mission Methane'e hazırlanıyor. Pilot ortak arıyoruz 👇 {link}",
+esub:"Metan izleme pilot iş birliği (GreenHope × XPRIZE)",
+ebody:"Merhaba {ad},\nBen Soheil Sabzevari (GreenHope). Platformumuz uydu ve yer sensörleriyle depo metan noktalarını bulup doğruluyor.\n{CTA}\nSunum: {link}\nSaygılar, Soheil"}},
+fa:{fa:{chat:"سلام {نام} 🌲 من سهیل (ForestAI) هستم؛ دستیار هوشمندی که گرنت را کشف، شرکت همکار را رتبه و قرارداد را پیش‌نویس می‌کند. {CTA} دمو: {لینک}",
+li:"استارتاپ‌های سبز گرنت‌ها را از دست می‌دهند — نه به‌خاطر ایده بد، به‌خاطر دیر رسیدن ⏰ ForestAI با هوش مصنوعی گرنت را کشف، شریک را رتبه و یادداشت حقوقی را تولید می‌کند. {CTA}",
+x:"گرنت + شریک + قرارداد = یک دستیار هوشمند 🌲 ForestAI را ببینید 👇 {لینک}",
+esub:"همکاری/اسپانسر ForestAI (دستیار هوشمند گرنت)",
+ebody:"با سلام،\nمن سهیل (ForestAI) هستم. سکوی ما کشف گرنت، رتبه‌بندی شریک و پیش‌نویس حقوقی را یکجا انجام می‌دهد.\n{CTA}\nدمو: {لینک}\nبا احترام، سهیل"},
+en:{chat:"Hi {name} 🌲 I'm Soheil (ForestAI) — an AI assistant that discovers grants, ranks partners and drafts deal memos. {CTA} Demo: {link}",
+li:"Green startups don't miss grants for bad ideas — they miss deadlines ⏰ ForestAI uses AI to discover grants, rank partners and generate legal memos. {CTA}",
+x:"Grant + partner + deal memo = one AI assistant 🌲 Meet ForestAI 👇 {link}",
+esub:"ForestAI partnership/sponsorship (AI grant assistant)",
+ebody:"Dear {name},\nI'm Soheil (ForestAI). Our platform combines grant discovery, partner ranking and legal drafting in one place.\n{CTA}\nDemo: {link}\nBest, Soheil"},
+tr:{chat:"Merhaba {ad} 🌲 Ben Soheil (ForestAI) — hibe bulan, ortak sıralayan ve sözleşme taslağı hazırlayan bir yapay zekâ asistanı. {CTA} Demo: {link}",
+li:"Yeşil startuplar hibeleri kötü fikirden değil, geç kalmaktan kaçırıyor ⏰ ForestAI hibeleri bulur, ortakları sıralar ve hukuk notları üretir. {CTA}",
+x:"Hibe + ortak + sözleşme = tek yapay zekâ asistanı 🌲 ForestAI 👇 {link}",
+esub:"ForestAI ortaklık/sponsorluk (yapay zekâ hibe asistanı)",
+ebody:"Merhaba {ad},\nBen Soheil (ForestAI). Platformumuz hibe keşfi, ortak sıralama ve hukuk taslağını bir araya getiriyor.\n{CTA}\nDemo: {link}\nSaygılar, Soheil"}},
+ca:{fa:{chat:"سلام {نام} 🌆 من سهیل (CityAir) هستم؛ سکوی آمادگی کیفیت هوای شهرها با ۱۲ حوزه ارزیابی و ۲۰ پروفایل شهری. {CTA} سایت: {لینک}",
+li:"شهرها از کمبود ambition شکست نمی‌خورند — از قطع ارتباط داده‌ها 🌆 CityAir با ۱۲ حوزه آمادگی، خلاصه‌های اجرایی و دستیار هوش مصنوعی، شواهد پراکنده را به اقدام تبدیل می‌کند. {CTA}",
+x:"۱۲ حوزه · ۲۰ شهر · ۱ دستیار هوشمند 🌆 CityAir را ببینید 👇 {لینک}",
+esub:"همکاری CityAir (سکوی آمادگی هوای پاک شهرها)",
+ebody:"با سلام،\nمن سهیل (CityAir) هستم. سکوی ما ارزیابی آمادگی، پروفایل شهری و دستیار هوش مصنوعی را برای اقدام هوای پاک ارائه می‌دهد.\n{CTA}\nسایت: {لینک}\nبا احترام، سهیل"},
+en:{chat:"Hi {name} 🌆 I'm Soheil (CityAir) — a city air-quality readiness platform: 12 domains, 20 city profiles, AI assistant. {CTA} Site: {link}",
+li:"Cities don't fail on ambition — they fail on connection 🌆 CityAir turns fragmented evidence into accountable clean-air action: 12 domains, briefs, RAG assistant. {CTA}",
+x:"12 domains · 20 cities · 1 AI assistant 🌆 Meet CityAir 👇 {link}",
+esub:"CityAir collaboration (city clean-air readiness platform)",
+ebody:"Dear {name},\nI'm Soheil (CityAir). Our platform offers readiness assessment, city profiles and an AI assistant for clean-air action.\n{CTA}\nSite: {link}\nBest, Soheil"},
+tr:{chat:"Merhaba {ad} 🌆 Ben Soheil (CityAir) — 12 alanlı şehir hava kalitesi hazırlık platformu, 20 şehir profili. {CTA} Site: {link}",
+li:"Şehirler hırs eksikliğinden değil, bağlantı eksikliğinden başarısız olur 🌆 CityAir dağınık kanıtları temiz hava eylemine dönüştürür: 12 alan, brifingler, yapay zekâ asistanı. {CTA}",
+x:"12 alan · 20 şehir · 1 yapay zekâ asistanı 🌆 CityAir 👇 {link}",
+esub:"CityAir iş birliği (şehir temiz hava hazırlık platformu)",
+ebody:"Merhaba {ad},\nBen Soheil (CityAir). Platformumuz temiz hava eylemi için hazırlık değerlendirmesi, şehir profilleri ve yapay zekâ asistanı sunuyor.\n{CTA}\nSite: {link}\nSaygılar, Soheil"}}};
+var CTAS={sponsor:{fa:"برای اسپانسری پایلوت ۱۵ دقیقه صحبت کنیم؟",en:"15-min call about pilot sponsorship?",tr:"Pilot sponsorluğu için 15 dakika görüşelim mi?"},
+gov:{fa:"برای پایلوت شهری و همکاری نهادی جلسه بگذاریم؟",en:"Set up a meeting for a city pilot?",tr:"Şehir pilotu için toplantı yapalım mı?"},
+uni:{fa:"برای پژوهش مشترک و تکنوپارک صحبت کنیم؟",en:"Talk about joint research & technopark?",tr:"Ortak araştırma ve teknopark için görüşelim mi?"},
+company:{fa:"مدل پایلوت/داده/لیسانس را بررسی کنیم؟",en:"Review a pilot/data/license model?",tr:"Pilot/veri/lisans modelini inceleyelim mi?"},
+media:{fa:"برای گزارش/مصاحبه فرصت دارید؟",en:"Open for a story/interview?",tr:"Haber/röportaj için vaktiniz var mı?"},
+job:{fa:"رزومه‌ام را بفرستم؟",en:"May I send my CV?",tr:"CV'mi gönderebilir miyim?"}};
+var OUT={chat:"",sub:"",body:""};
+function fill(t,p,l,c){var nm=p||(document.documentElement.lang==='en'?"{name}":"{نام}");var lk=l||"{link}";return t.split("{CTA}").join(c).split("{نام}").join(nm).split("{name}").join(nm).split("{ad}").join(nm).split("{لینک}").join(lk).split("{link}").join(lk);}
+function render(){
+  var p=document.getElementById('sProj').value,a=document.getElementById('sAud').value,l=document.getElementById('sLang').value;
+  var nm=document.getElementById('inName').value.trim(),lk=document.getElementById('inLink').value.trim();
+  var m=MSGS[p][l],c=CTAS[a][l];
+  OUT.chat=fill(m.chat,nm,lk,c);OUT.sub=fill(m.esub,nm,lk,c);OUT.body=fill(m.ebody,nm,lk,c);
+  document.getElementById('oChat').textContent=OUT.chat;
+  document.getElementById('oLi').textContent=fill(m.li,nm,lk,c);
+  document.getElementById('oX').textContent=fill(m.x,nm,lk,c);
+  document.getElementById('oSub').textContent=OUT.sub;
+  document.getElementById('oBody').textContent=OUT.body;
+}
+function copyMsg(id,btn){var t=document.getElementById(id).textContent;
+  function ok(){btn.textContent='✓';setTimeout(function(){btn.textContent='Copy';},1500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(function(){fb();});}else fb();
+  function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();}}
+function goWA(){var ph=document.getElementById('inPhone').value.replace(/\D/g,'');if(!ph){alert('phone?');return;}window.open('https://wa.me/'+ph+'?text='+encodeURIComponent(OUT.chat),'_blank');}
+function goTG(){window.open('https://t.me/share/url?url='+encodeURIComponent(document.getElementById('inLink').value.trim())+'&text='+encodeURIComponent(OUT.chat),'_blank');}
+function goMail(){var em=document.getElementById('inMail').value.trim();window.location.href='mailto:'+em+'?subject='+encodeURIComponent(OUT.sub)+'&body='+encodeURIComponent(OUT.body);}
+var store={ticks:{}};try{var s=localStorage.getItem('mkt1');if(s)store=JSON.parse(s);}catch(e){}
+function save(){try{localStorage.setItem('mkt1',JSON.stringify(store));}catch(e){}}
+document.querySelectorAll('input[type=checkbox][id]').forEach(function(c){if(store.ticks[c.id])c.checked=true;c.addEventListener('change',function(){store.ticks[c.id]=c.checked;save();});});
+function setLang(l){document.querySelectorAll('[data-fa]').forEach(function(el){var v=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');if(v!==null)el.textContent=v;});document.documentElement.lang=l;document.documentElement.dir=(l==='fa')?'rtl':'ltr';document.getElementById('btnFa').classList.toggle('active',l==='fa');document.getElementById('btnEn').classList.toggle('active',l==='en');render();}
+render();
+</script>
+</body>
+</html>
