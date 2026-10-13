@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>۳۰ مهارت کلیدی | 30 Key Skills</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;line-height:1.9}
+.wrap{max-width:980px;margin:0 auto;padding:24px 18px 60px}
+header.hero{text-align:center;padding:30px 16px 22px;background:linear-gradient(135deg,#123524,#1d5c38);border-radius:18px;margin-bottom:18px;border:1px solid #2c7a4b}
+header.hero h1{font-size:1.4rem;margin-bottom:6px}
+header.hero p{color:#bfe3cc;font-size:.9rem}
+.langbar{display:flex;gap:8px;justify-content:center;margin:14px 0 4px;flex-wrap:wrap}
+.langbar button,.backbtn{background:#0d1f16;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:7px 22px;cursor:pointer;font-size:.88rem;font-family:inherit;text-decoration:none;display:inline-block}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+.toolbar{display:flex;gap:10px;margin:16px 0;flex-wrap:wrap}
+select,input[type=text]{background:#0d1f16;color:#e8f5ec;border:1px solid #2c7a4b;border-radius:8px;padding:8px 12px;font-family:inherit;font-size:.85rem}
+.toolbar select{flex:0 0 auto}.toolbar input{flex:1;min-width:160px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.wrap{padding:14px 10px 40px}header.hero{padding:20px 12px 16px}header.hero h1{font-size:1.1rem}}
+.card{background:#12291d;border:1px solid #2c7a4b;border-radius:14px;padding:14px 16px}
+.card h3{font-size:.95rem;color:#e8f5ec}
+.card .fa{font-size:.8rem;color:#9fd8b4}
+.card .meta{font-size:.75rem;color:#7ba78d;margin-top:6px}
+.badge{display:inline-block;font-size:.7rem;border-radius:999px;padding:1px 10px;font-weight:bold;margin-left:6px}
+.p1{background:#14532d;color:#86efac;border:1px solid #22c55e}
+.p2{background:#4a3a10;color:#fcd34d;border:1px solid #f59e0b}
+.p3{background:#1d3a28;color:#9fd8b4;border:1px solid #2c7a4b}
+footer{text-align:center;margin-top:24px;color:#7ba78d;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1 data-fa="🧠 ۳۰ مهارت کلیدی (مدل آتیکووا)" data-en="🧠 30 Key Skills (Atikova model)">🧠 ۳۰ مهارت کلیدی (مدل آتیکووا)</h1>
+  <p data-fa="مهارت‌های لازم برای GreenHope ،ForestAI و CityAir — اولویت P1 یعنی اول یاد بگیر/استخدام کن" data-en="Skills needed for GreenHope, ForestAI & CityAir — P1 means learn/hire first">مهارت‌های لازم برای GreenHope ،ForestAI و CityAir — اولویت P1 یعنی اول یاد بگیر/استخدام کن</p>
+  <div class="langbar">
+    <button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button>
+    <button id="btnEn" onclick="setLang('en')">English</button>
+    <a class="backbtn" href="index.html" data-fa="→ خانه" data-en="→ Home">→ خانه</a>
+    <a class="backbtn" href="outreach-tracker.html" data-fa="→ ترکر" data-en="→ Tracker">→ ترکر</a>
+  </div>
+</header>
+<div class="toolbar">
+<select id="fcat" onchange="flt()"><option value="">🌐 همه | All</option><option value="rs">🛰️ سنجش و داده</option><option value="ai">🤖 AI و نرم‌افزار</option><option value="cl">🌍 اقلیم و محیط‌زیست</option><option value="bz">💼 کسب‌وکار و گرنت</option><option value="cm">📣 ارتباطات</option></select>
+<input type="text" id="fq" oninput="flt()" data-fa-ph="جست‌وجوی مهارت..." data-en-ph="Search skills...">
+</div>
+<div class="grid" id="grid">
+<div class="card" data-cat="rs"><span class="badge p1">P1</span><h3>Sentinel-2 Imagery Analysis</h3><div class="fa">تحلیل تصاویر سنتینل-۲</div><div class="meta">🌱🌆 · 🛰️</div></div>
+<div class="card" data-cat="rs"><span class="badge p1">P1</span><h3>NASA FIRMS Active-Fire Data</h3><div class="fa">داده آتش فعال FIRMS ناسا</div><div class="meta">🌱🌆 · 🛰️</div></div>
+<div class="card" data-cat="rs"><span class="badge p1">P1</span><h3>Thermal Anomaly Detection</h3><div class="fa">آشکارسازی ناهنجاری حرارتی</div><div class="meta">🌱 · 🛰️</div></div>
+<div class="card" data-cat="rs"><span class="badge p2">P2</span><h3>GIS (Esri / QGIS)</h3><div class="fa">سامانه اطلاعات جغرافیایی</div><div class="meta">🌱🌆 · 🛰️</div></div>
+<div class="card" data-cat="rs"><span class="badge p2">P2</span><h3>Google Earth Engine</h3><div class="fa">پردازش ماهواره‌ای گوگل</div><div class="meta">🌱 · 🛰️</div></div>
+<div class="card" data-cat="rs"><span class="badge p1">P1</span><h3>Ground Sensor Networks (IoT/LoRaWAN)</h3><div class="fa">شبکه حسگر زمینی</div><div class="meta">🌱🌆 · 🛰️</div></div>
+<div class="card" data-cat="ai"><span class="badge p1">P1</span><h3>Python FastAPI Backends</h3><div class="fa">بک‌اند پایتون</div><div class="meta">🌲 · 🤖</div></div>
+<div class="card" data-cat="ai"><span class="badge p2">P2</span><h3>React Frontends</h3><div class="fa">فرانت‌اند ری‌اکت</div><div class="meta">🌲 · 🤖</div></div>
+<div class="card" data-cat="ai"><span class="badge p1">P1</span><h3>LLM Apps (Claude API)</h3><div class="fa">اپ‌های مدل زبانی</div><div class="meta">🌲🌆 · 🤖</div></div>
+<div class="card" data-cat="ai"><span class="badge p2">P2</span><h3>RAG & Knowledge Bases</h3><div class="fa">بازیابی و پایگاه دانش</div><div class="meta">🌲🌆 · 🤖</div></div>
+<div class="card" data-cat="ai"><span class="badge p2">P2</span><h3>Data Pipelines / ETL</h3><div class="fa">خط لوله داده</div><div class="meta">🌱🌲 · 🤖</div></div>
+<div class="card" data-cat="ai"><span class="badge p3">P3</span><h3>Hugging Face Spaces & Models</h3><div class="fa">فضاها و مدل‌های هاگینگ‌فیس</div><div class="meta">🌱🌲🌆 · 🤖</div></div>
+<div class="card" data-cat="cl"><span class="badge p1">P1</span><h3>Methane Measurement & MRV</h3><div class="fa">اندازه‌گیری متان و MRV</div><div class="meta">🌱 · 🌍</div></div>
+<div class="card" data-cat="cl"><span class="badge p1">P1</span><h3>Landfill & Waste Systems</h3><div class="fa">دفن‌گاه و سامانه پسماند</div><div class="meta">🌱 · 🌍</div></div>
+<div class="card" data-cat="cl"><span class="badge p2">P2</span><h3>Air-Quality Monitoring (PM2.5)</h3><div class="fa">پایش کیفیت هوا</div><div class="meta">🌱🌆 · 🌍</div></div>
+<div class="card" data-cat="cl"><span class="badge p2">P2</span><h3>Waste-to-Carbon Removal</h3><div class="fa">پسماند به حذف کربن</div><div class="meta">🌱 · 🌍</div></div>
+<div class="card" data-cat="cl"><span class="badge p3">P3</span><h3>LCA & Emission Inventories</h3><div class="fa">ارزیابی چرخه حیات و سیاهه انتشار</div><div class="meta">🌱🌆 · 🌍</div></div>
+<div class="card" data-cat="cl"><span class="badge p3">P3</span><h3>WHO Air-Quality Guidelines</h3><div class="fa">رهنمودهای هوای پاک WHO</div><div class="meta">🌆 · 🌍</div></div>
+<div class="card" data-cat="bz"><span class="badge p1">P1</span><h3>Grant Discovery & Writing</h3><div class="fa">کشف و نگارش گرنت (TÜBİTAK/Horizon/NSF)</div><div class="meta">🌲🌱 · 💼</div></div>
+<div class="card" data-cat="bz"><span class="badge p1">P1</span><h3>Consortium Building</h3><div class="fa">تشکیل کنسرسیوم (XPRIZE)</div><div class="meta">🌱 · 💼</div></div>
+<div class="card" data-cat="bz"><span class="badge p1">P1</span><h3>Technopark & Incubation Process</h3><div class="fa">فرایند تکنوپارک و رشد (۴۶۹۱)</div><div class="meta">🌱🌲 · 💼</div></div>
+<div class="card" data-cat="bz"><span class="badge p2">P2</span><h3>IP & Patent Basics</h3><div class="fa">مبانی پتنت و مالکیت فکری</div><div class="meta">🌲 · 💼</div></div>
+<div class="card" data-cat="bz"><span class="badge p2">P2</span><h3>Pilot Financial Modeling</h3><div class="fa">مدل مالی پایلوت</div><div class="meta">🌱🌲 · 💼</div></div>
+<div class="card" data-cat="bz"><span class="badge p3">P3</span><h3>Turkish Company Setup (MERSİS)</h3><div class="fa">ثبت شرکت ترکیه</div><div class="meta">🌱🌲 · 💼</div></div>
+<div class="card" data-cat="cm"><span class="badge p1">P1</span><h3>Trilingual Outreach (FA/EN/TR)</h3><div class="fa">ارتباط سه‌زبانه</div><div class="meta">🌱🌲🌆 · 📣</div></div>
+<div class="card" data-cat="cm"><span class="badge p2">P2</span><h3>Science Communication & Media</h3><div class="fa">ارتباط علم و رسانه</div><div class="meta">🌱🌆 · 📣</div></div>
+<div class="card" data-cat="cm"><span class="badge p2">P2</span><h3>Proposal & Pitch-Deck Design</h3><div class="fa">طراحی پروپوزال و پیچ‌دک</div><div class="meta">🌱🌲 · 📣</div></div>
+<div class="card" data-cat="cm"><span class="badge p3">P3</span><h3>Stakeholder Interviews</h3><div class="fa">مصاحبه ذی‌نفعان</div><div class="meta">🌱🌆 · 📣</div></div>
+<div class="card" data-cat="cm"><span class="badge p3">P3</span><h3>Social Campaigns (LinkedIn/X/TG)</h3><div class="fa">کمپین شبکه‌های اجتماعی</div><div class="meta">🌱🌲🌆 · 📣</div></div>
+<div class="card" data-cat="cm"><span class="badge p3">P3</span><h3>Press Kits & Storytelling</h3><div class="fa">کیت خبری و روایت</div><div class="meta">🌱🌆 · 📣</div></div>
+</div>
+<footer data-fa="اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir" data-en="Oct 2026 · GreenHope & ForestAI & CityAir">اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir</footer>
+</div>
+<script>
+function flt(){var c=document.getElementById('fcat').value,q=document.getElementById('fq').value.toLowerCase();
+document.querySelectorAll('#grid .card').forEach(function(el){var ok=(!c||el.getAttribute('data-cat')===c)&&el.textContent.toLowerCase().indexOf(q)>=0;el.style.display=ok?'':'none';});}
+function setLang(l){document.querySelectorAll('[data-fa]').forEach(function(el){var v=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');if(v!==null)el.textContent=v;});
+var q=document.getElementById('fq');q.placeholder=(l==='fa')?q.getAttribute('data-fa-ph'):q.getAttribute('data-en-ph');
+document.documentElement.lang=l;document.documentElement.dir=(l==='fa')?'rtl':'ltr';
+document.getElementById('btnFa').classList.toggle('active',l==='fa');document.getElementById('btnEn').classList.toggle('active',l==='en');}
+</script>
+</body>
+</html>
