@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رویدادها + ماژول ایمیل رایگان | Events + Free Email Module</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#0d1f16;color:#e8f5ec;line-height:1.9}
+.wrap{max-width:980px;margin:0 auto;padding:24px 18px 60px}
+header.hero{text-align:center;padding:30px 16px 22px;background:linear-gradient(135deg,#123524,#1d5c38);border-radius:18px;margin-bottom:18px;border:1px solid #2c7a4b}
+header.hero h1{font-size:1.4rem;margin-bottom:6px}
+header.hero p{color:#bfe3cc;font-size:.9rem}
+.langbar{display:flex;gap:8px;justify-content:center;margin:14px 0 4px;flex-wrap:wrap}
+.langbar button,.backbtn{background:#0d1f16;color:#bfe3cc;border:1px solid #2c7a4b;border-radius:999px;padding:7px 22px;cursor:pointer;font-size:.88rem;font-family:inherit;text-decoration:none;display:inline-block}
+.langbar button.active{background:#2c7a4b;color:#fff;font-weight:bold}
+section.box{background:#12291d;border:1px solid #2c7a4b;border-radius:16px;padding:22px;margin-top:18px}
+section.box h2{color:#7cf2a8;font-size:1.15rem;margin-bottom:4px}
+section.box>p{color:#9fd8b4;font-size:.86rem;margin-bottom:12px}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{background:#0d1f16;color:#7cf2a8;padding:8px 6px;border:1px solid #2c7a4b}
+td{padding:7px 6px;border:1px solid #1d3a28;color:#d9efe1;vertical-align:top}
+tr:nth-child(even) td{background:#0f2318}
+td a{color:#7cf2a8}
+.badge{display:inline-block;font-size:.7rem;border-radius:999px;padding:1px 10px;font-weight:bold}
+.now{background:#4c1d1d;color:#fca5a5;border:1px solid #ef4444}
+.soon{background:#4a3a10;color:#fcd34d;border:1px solid #f59e0b}
+.later{background:#1d3a28;color:#9fd8b4;border:1px solid #2c7a4b}
+.msg{background:#0d1f16;border-radius:10px;padding:10px 14px;font-size:.82rem;color:#e8f5ec;margin:6px 0;white-space:pre-line}
+.out{border:1px dashed #2c7a4b;border-radius:12px;padding:12px 14px;margin-top:10px;background:#0f2318}
+.out h4{color:#7cf2a8;font-size:.9rem}
+button.copy{background:transparent;border:1px solid #2c7a4b;color:#7cf2a8;border-radius:8px;padding:4px 14px;cursor:pointer;font-family:inherit;font-size:.78rem;margin:2px}
+ol.steps{padding-right:20px;font-size:.86rem;color:#d9efe1}
+[dir=ltr] ol.steps{padding-right:0;padding-left:20px}
+ol.steps li{margin:6px 0}
+pre{background:#050f0a;border:1px solid #2c7a4b;border-radius:10px;padding:14px;font-size:.72rem;color:#a7e3c0;overflow-x:auto;direction:ltr;text-align:left;max-height:420px;overflow-y:auto}
+code{font-family:Consolas,monospace}
+.note{background:#12291d;border:1px solid #f59e0b;border-radius:14px;padding:14px 18px;margin-top:20px;font-size:.85rem;color:#fde9c0}
+footer{text-align:center;margin-top:24px;color:#7ba78d;font-size:.82rem}
+@media(max-width:640px){body{font-size:.9rem}.wrap{padding:14px 10px 40px}header.hero{padding:20px 12px 16px}header.hero h1{font-size:1.1rem}section.box{padding:14px 12px}.box{overflow-x:auto}table{font-size:.7rem}th,td{padding:5px 4px}.msg{font-size:.76rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <h1 data-fa="📅 رویدادهای استانبول + ماژول ایمیل رایگان" data-en="📅 Istanbul events + free email module">📅 رویدادهای استانبول + ماژول ایمیل رایگان</h1>
+  <p data-fa="رویدادهای این روزها در حوزه ما + جدول تماس + ارسال ایمیل رایگان با Gmail برای درخواست کار و همکاری" data-en="These days' events in our field + contact table + free Gmail sending for job & partnership requests">رویدادهای این روزها در حوزه ما + جدول تماس + ارسال ایمیل رایگان با Gmail برای درخواست کار و همکاری</p>
+  <div class="langbar">
+    <button id="btnFa" class="active" onclick="setLang('fa')">فارسی</button>
+    <button id="btnEn" onclick="setLang('en')">English</button>
+    <a class="backbtn" href="index.html" data-fa="→ خانه" data-en="→ Home">→ خانه</a>
+    <a class="backbtn" href="marketing.html" data-fa="→ مارکتینگ" data-en="→ Marketing">→ مارکتینگ</a>
+  </div>
+</header>
+
+<section class="box">
+<h2 data-fa="۱. 📅 رویدادهای این روزها (استانبول + ترکیه)" data-en="1. 📅 These days' events (Istanbul + Türkiye)">۱. 📅 رویدادهای این روزها (استانبول + ترکیه)</h2>
+<p data-fa="ثبت‌نام و تماس از صفحه رسمی هر رویداد (ستون لینک). شماره واتس‌اپ برگزارکننده‌ها عمومی نیست — در محل رویداد بگیر و با لانچر مارکتینگ پیام بده." data-en="Register & contact via each event's official page (link column). Organizers' WhatsApp isn't public — collect numbers at the venue, then message with the marketing launcher.">ثبت‌نام و تماس از صفحه رسمی هر رویداد (ستون لینک). شماره واتس‌اپ برگزارکننده‌ها عمومی نیست — در محل رویداد بگیر و با لانچر مارکتینگ پیام بده.</p>
+<table>
+<tr><th data-fa="رویداد" data-en="Event">رویداد</th><th data-fa="تاریخ" data-en="Date">تاریخ</th><th data-fa="مکان" data-en="Venue">مکان</th><th data-fa="برگزارکننده" data-en="Organizer">برگزارکننده</th><th data-fa="لینک/ثبت‌نام" data-en="Link">لینک/ثبت‌نام</th></tr>
+<tr><td><span class="badge now">NOW</span> Istanbul Slush'D 2026 — استارتاپ، ۱۴۰۰ استارتاپ و ۶۰۰ سرمایه‌گذار</td><td>Oct 12–14</td><td>Rixos Tersane</td><td>Slush'D Istanbul</td><td><a href="https://istanbulslushd.com/" target="_blank">🔗</a></td></tr>
+<tr><td>Disrupt.com × Slush'd Builder's Meetup</td><td>Oct 13 18:00</td><td>Istanbul</td><td>Disrupt.com</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>ICCCSES — اقلیم و محیط‌زیست</td><td>Oct 14</td><td>Istanbul</td><td>AllConferenceAlert</td><td><a href="https://www.allconferencealert.com/istanbul/sustainable-development" target="_blank">🔗</a></td></tr>
+<tr><td><span class="badge soon">WEEK</span> Türkiye Innovation Week 2026</td><td>Oct 15</td><td>Istanbul</td><td>TİM</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>WIPO-AUTM Tech Transfer Summit (دیپ‌تک)</td><td>Oct 19</td><td>Istanbul</td><td>ÜSİMP</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td><span class="badge soon">BIG</span> Webrazzi Summit 2026 (دوره ۲۰!) — تکنولوژی و کارآفرینی</td><td>Oct 21</td><td>Wyndham Grand Levent</td><td>Webrazzi</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>ÜSİMP Congress + TAİK Global Summit + Apex Expos</td><td>Oct 22</td><td>various/Grand Tarabya</td><td>ÜSİMP/TAİK/Apex</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>ICWM/ICDRE/ICEBESE — پسماند و انرژی تجدیدپذیر</td><td>Oct 25</td><td>Istanbul</td><td>ConferenceIndex</td><td><a href="https://conferenceindex.org/conferences/sustainability/turkey" target="_blank">🔗</a></td></tr>
+<tr><td>ICFFSA — جنگل و کشاورزی پایدار</td><td>Oct 29</td><td>Istanbul</td><td>AllConferenceAlert</td><td><a href="https://www.allconferencealert.com/istanbul/sustainable-development" target="_blank">🔗</a></td></tr>
+<tr><td><span class="badge soon">FUNDED</span> Youth Climate Leadership Convention (کاملاً حمایتی!)</td><td>Nov 6–9</td><td>Istanbul</td><td>ALEN network</td><td><a href="https://afrileadnetwork.org/fully-funded-istanbul-global-youth-climate-leadership-convention-2026/" target="_blank">🔗</a></td></tr>
+<tr><td><span class="badge later">MEGA</span> COP31 + Startup Zone (Green Zone)</td><td>Nov 9–20</td><td>Antalya</td><td>UNFCCC/Türkiye</td><td><a href="https://startupzone.cop31.center/" target="_blank">🔗</a></td></tr>
+<tr><td>TRAI AI Summit (حضوری+آنلاین)</td><td>Nov 11</td><td>Hybrid Istanbul</td><td>TRAI</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>HOSTECH — هتل و رستوران (مرتبط با آتیکووا)</td><td>Nov 10–14</td><td>TÜYAP</td><td>TUSİD</td><td><a href="https://10times.com/green-technology" target="_blank">🔗</a></td></tr>
+<tr><td>Startups.watch Demo Day</td><td>Nov 26</td><td>Istanbul</td><td>Startups.watch</td><td><a href="https://startups.watch/events" target="_blank">🔗</a></td></tr>
+<tr><td>YTÜ GreenMetric Workshop (ثبت‌نام تا ۱۵ نوامبر)</td><td>Dec 10–11</td><td>YTÜ Davutpaşa</td><td>YTÜ</td><td><a href="https://yildiz.edu.tr/en/university/events/2026-ui-greenmetric-turkey-workshop" target="_blank">🔗</a></td></tr>
+</table>
+</section>
+
+<section class="box">
+<h2 data-fa="۲. 📧 ماژول ارسال ایمیل رایگان (Gmail)" data-en="2. 📧 Free email-sending module (Gmail)">۲. 📧 ماژول ارسال ایمیل رایگان (Gmail)</h2>
+<p data-fa="بهترین گزینه رایگان: Gmail + App Password (بدون نیاز به Gmail API پیچیده) — روزی تا ~۵۰۰ ایمیل رایگان." data-en="Best free option: Gmail + App Password (no complex Gmail API needed) — ~500 free emails/day.">بهترین گزینه رایگان: Gmail + App Password (بدون نیاز به Gmail API پیچیده) — روزی تا ~۵۰۰ ایمیل رایگان.</p>
+<ol class="steps">
+<li data-fa="۱. وارد حساب گوگل شو: myaccount.google.com → Security → احراز دومرحله‌ای را روشن کن" data-en="1. Open your Google account: myaccount.google.com → Security → turn on 2-Step Verification">۱. وارد حساب گوگل شو: myaccount.google.com → Security → احراز دومرحله‌ای را روشن کن</li>
+<li data-fa="۲. جست‌وجو کن App passwords → یک رمز ۱۶ حرفی بساز و نگه دار (فقط یک‌بار دیده می‌شود)" data-en="2. Search App passwords → create a 16-char password and keep it (shown once)">۲. جست‌وجو کن App passwords → یک رمز ۱۶ حرفی بساز و نگه دار (فقط یک‌بار دیده می‌شود)</li>
+<li data-fa="۳. فایل leads.csv بساز با ستون‌ها: name,email,org,tpl (نمونه tpl: job_en)" data-en="3. Make leads.csv with columns: name,email,org,tpl (e.g. tpl: job_en)">۳. فایل leads.csv بساز با ستون‌ها: name,email,org,tpl (نمونه tpl: job_en)</li>
+<li data-fa="۴. اسکریپت زیر را اجرا کن: اول بدون آرگومان (تست خشک) بعد با --send (ارسال واقعی)" data-en="4. Run the script below: first with no args (dry run), then with --send (real sending)">۴. اسکریپت زیر را اجرا کن: اول بدون آرگومان (تست خشک) بعد با --send (ارسال واقعی)</li>
+<li data-fa="۵. اول به خودت بفرست و چک کن؛ سقف روزانه کد ۴۰ ایمیل است (ایمن)" data-en="5. Send to yourself first and check; the code caps at 40/day (safe)">۵. اول به خودت بفرست و چک کن؛ سقف روزانه کد ۴۰ ایمیل است (ایمن)</li>
+</ol>
+<div class="out"><h4>send_outreach.py</h4><pre><code>import csv, os, smtplib, sys, time, random
+from email.message import EmailMessage
+from getpass import getpass
+
+TEMPLATES = {
+ "job_en": {"sub": "Application: climate-tech developer (live demos inside)",
+  "body": "Dear {name},\nI'm Soheil Sabzevari, a climate-tech developer in Istanbul (GreenHope / ForestAI / CityAir - live demos + pitch decks ready).\nMay I send my CV for a role or project collaboration at {org}?\nBest regards,\nSoheil | WhatsApp +1 208 503 3653"},
+ "job_tr": {"sub": "Is basvurusu: iklim teknolojileri gelistirici",
+  "body": "Merhaba {name},\nBen Soheil Sabzevari, Istanbul'da iklim teknolojileri gelistiricisiyim (GreenHope / ForestAI / CityAir - canli demo ve sunum hazir).\n{org} bunyesinde bir rol veya proje is birligi icin CV'mi gonderebilir miyim?\nSaygilar, Soheil | WhatsApp +1 208 503 3653"},
+ "pilot_en": {"sub": "Pilot proposal: satellite methane screening (GreenHope)",
+  "body": "Dear {name},\nI'm Soheil Sabzevari (GreenHope). We screen landfill methane hotspots with satellites + ground sensors (XPRIZE Mission Methane track).\nCan we set up a 15-min call about a pilot with {org}?\nDeck on request. Best, Soheil"},
+}
+
+def load(p):
+    rows = []
+    with open(p, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r.get("email"):
+                rows.append(r)
+    return rows
+
+live = "--send" in sys.argv
+rows = load("leads.csv")
+user = os.environ.get("GMAIL_USER") or input("Gmail: ")
+srv = None
+if live:
+    key = os.environ.get("GMAIL_APPKEY") or getpass("App password: ")
+    srv = smtplib.SMTP("smtp.gmail.com", 587)
+    srv.starttls(); srv.login(user, key)
+sent = 0
+for r in rows:
+    if sent >= 40:
+        print("daily cap reached"); break
+    t = TEMPLATES.get(r.get("tpl", "job_en"), TEMPLATES["job_en"])
+    msg = EmailMessage()
+    msg["From"] = user; msg["To"] = r["email"]
+    msg["Subject"] = t["sub"].format(**r)
+    msg.set_content(t["body"].format(**r))
+    if live:
+        srv.send_message(msg); sent += 1
+        print("sent", r["email"])
+        time.sleep(random.randint(20, 60))
+    else:
+        print("--- DRY RUN to", r["email"], "---")
+        print(msg["Subject"])
+if live and srv:
+    srv.quit()</code></pre></div>
+</section>
+
+<section class="box">
+<h2 data-fa="۳. ✉️ قالب‌های آماده (تکی)" data-en="3. ✉️ Ready templates (single)">۳. ✉️ قالب‌های آماده (تکی)</h2>
+<p data-fa="برای ارسال دستی تکی — کپی کن و بفرست:" data-en="For manual single sending — copy & send:">برای ارسال دستی تکی — کپی کن و بفرست:</p>
+<div class="out"><h4 data-fa="درخواست کار (انگلیسی)" data-en="Job request (English)">درخواست کار (انگلیسی)</h4><div class="msg" id="e1">Subject: Application: climate-tech developer (live demos inside)
+
+Dear {name},
+I'm Soheil Sabzevari, a climate-tech developer in Istanbul (GreenHope / ForestAI / CityAir - live demos + pitch decks ready).
+May I send my CV for a role or project collaboration at {org}?
+Best regards,
+Soheil | WhatsApp +1 208 503 3653</div><button class="copy" onclick="copyMsg('e1',this)">Copy</button></div>
+<div class="out"><h4 data-fa="درخواست کار (ترکی)" data-en="Job request (Turkish)">درخواست کار (ترکی)</h4><div class="msg" id="e2">Subject: Is basvurusu: iklim teknolojileri gelistirici
+
+Merhaba {name},
+Ben Soheil Sabzevari, Istanbul'da iklim teknolojileri gelistiricisiyim (GreenHope / ForestAI / CityAir - canli demo ve sunum hazir).
+{org} bunyesinde bir rol veya proje is birligi icin CV'mi gonderebilir miyim?
+Saygilar, Soheil | WhatsApp +1 208 503 3653</div><button class="copy" onclick="copyMsg('e2',this)">Copy</button></div>
+<div class="out"><h4 data-fa="پیشنهاد پایلوت (انگلیسی)" data-en="Pilot proposal (English)">پیشنهاد پایلوت (انگلیسی)</h4><div class="msg" id="e3">Subject: Pilot proposal: satellite methane screening (GreenHope)
+
+Dear {name},
+I'm Soheil Sabzevari (GreenHope). We screen landfill methane hotspots with satellites + ground sensors (XPRIZE Mission Methane track).
+Can we set up a 15-min call about a pilot with {org}?
+Deck on request. Best, Soheil</div><button class="copy" onclick="copyMsg('e3',this)">Copy</button></div>
+</section>
+
+<div class="note" data-fa="⚠️ قوانین ایمن: فقط به ایمیل‌های کاری عمومی یا با رضایت بفرست · اول dry-run بعد --send · روزی حداکثر ۴۰ تا · رمز App را به هیچ‌کس نده و در کد ذخیره نکن." data-en="⚠️ Safety rules: only mail public business emails or consented contacts · dry-run first, then --send · max 40/day · never share or hardcode the App password.">⚠️ قوانین ایمن: فقط به ایمیل‌های کاری عمومی یا با رضایت بفرست · اول dry-run بعد --send · روزی حداکثر ۴۰ تا · رمز App را به هیچ‌کس نده و در کد ذخیره نکن.</div>
+<footer data-fa="اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir" data-en="Oct 2026 · GreenHope & ForestAI & CityAir">اکتبر ۲۰۲۶ · GreenHope و ForestAI و CityAir</footer>
+</div>
+<script>
+function copyMsg(id,btn){var t=document.getElementById(id).textContent;
+function ok(){btn.textContent='✓';setTimeout(function(){btn.textContent='Copy';},1500);}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(function(){fb();});}else fb();
+function fb(){var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);ok();}}
+function setLang(l){document.querySelectorAll('[data-fa]').forEach(function(el){var v=(l==='fa')?el.getAttribute('data-fa'):el.getAttribute('data-en');if(v!==null)el.textContent=v;});document.documentElement.lang=l;document.documentElement.dir=(l==='fa')?'rtl':'ltr';document.getElementById('btnFa').classList.toggle('active',l==='fa');document.getElementById('btnEn').classList.toggle('active',l==='en');}
+</script>
+</body>
+</html>
